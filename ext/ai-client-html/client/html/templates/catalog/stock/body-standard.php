@@ -103,13 +103,13 @@ foreach( $this->get( 'stockProductCodes', [] ) as $prodCode )
 				$textStock[$level]
 			);
 		}
-
+/*commentaire sam pour changer laffichage du stock*/
 		$stocks[$level] .= '
 			<div class="stockitem ' . $level . '" data-prodcode="' . $enc->attr( $prodCode ) . '" title="' . $enc->attr( $textStock[$level] ) . '">
 				<link itemprop="availability" href="' . $link . '" />
 				<div class="stocklevel"></div>
 				<span class="stocktext">' . nl2br( $enc->html( $text, $enc::TRUST ) ) . '</span>
-			</div>
+			</div>	
 		';
 	}
 

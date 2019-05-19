@@ -160,7 +160,6 @@ $detailConfig = $this->config( 'client/html/catalog/detail/url/config', [] );
 
 
 			<div class="offer" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-
 				<div class="stock-list">
 					<div class="articleitem stock-actual"
 						data-prodid="<?= $enc->attr( $productItem->getId() ); ?>"

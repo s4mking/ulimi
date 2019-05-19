@@ -282,8 +282,8 @@ header {
     margin-top: 2%;
     margin-left: 5%;
 }
-
-input {
+/*Bah oui on a qua toucher a toutes les kinputs du site sérieusement cxest quoi leur pbm*/
+/* input {
     height: 63px;
     margin-left: 10%;
     display:block;
@@ -291,7 +291,7 @@ input {
     border-bottom:1px solid #000000;
     width:20%;
     background-color: #F9E76E;
-}
+} */
 
 .search {
     height: 25px;
@@ -502,6 +502,9 @@ input {
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
+    align-items:center;
+    background-image:url('/files/img_home_footer.png');
+    background-position: left;
 }
 
 .container_comand-btn {
@@ -569,4 +572,47 @@ body .input-group{
 }
 .aimeos .search_head {
     width: 150%;
+}
+body .home_head{
+    width:100vw;
+    height:45vh;
+    padding-top:5vh;
+    background-image: url('/files/back_home_fruits.png');
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.pres_home{
+    display:flex;
+    margin-top:10vh;
+    align-items: center;
+}
+
+.video_home{
+    width:70%;
+    height:45vh;
+    margin-left:12%;
+    
+    background-color:#A88888;
+}
+.pres_home img{
+    width:182px;
+    height:238px;
+}
+
+.bande{
+    width:100vw;
+    height:128px;
+    background-image: url('/files/banner_filigrane.png');
+}
+
+body .fos_user_registration_register{
+   display: flex;
+   flex-direction: column;
+width:70%;
+margin:auto;
+align-items: center;
+}
+body .fos_user_registration_register div div{
+    display:flex;
+    justify-content: space-around;
 }

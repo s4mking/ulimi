@@ -1,3 +1,7 @@
 # index:
 #   path: '/'
 #       defaults: { _controller: AimeosShopBundle:Catalog:list }
+
+controllers:
+    resource: '../src/Controller/'
+    type:     annotation

@@ -110,7 +110,12 @@ if( $this->get( 'listProductTotal', 0 ) > 1 && $this->config( 'client/html/catal
 
 ?>
 <section class="aimeos catalog-list<?= $enc->attr( $classes ); ?>" data-jsonurl="<?= $enc->attr( $this->url( $optTarget, $optCntl, $optAction, [], [], $optConfig ) ); ?>">
-
+<div class='engagement'>
+	<h2>Trouvez le producteur près de chez vous et retirez vos courses directement chez lui </h2>
+	<div class='livraison_catalog'>
+		
+	</div>	
+</div>
 	<?php if( isset( $this->listErrorList ) ) : ?>
 		<ul class="error-list">
 			<?php foreach( (array) $this->listErrorList as $errmsg ) : ?>

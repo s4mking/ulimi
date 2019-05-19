@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block aimeos_header %}{% endblock %}
+        <title>{% block title %}Aimeos shop{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% block aimeos_styles %}{% endblock %}
+  {% block stylesheets %}
+            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+            {{ encore_entry_link_tags('app') }}
+
+            <!-- Renders a link tag (if your module requires any CSS)
+                 <link rel="stylesheet" href="/build/app.css"> -->
+        {% endblock %}
+    </head>
+    <body>
+    
+       <header>
+<div class="content_header">
+<a href="http://127.0.0.1:8000"><img src="http://127.0.0.1:8000/files/logo.png" alt="Logo" class="logo"></a>
+<div class="accessibility">Site accessible <i class="fas fa-chevron-down"></i></div>
+<section class="aimeos catalog-filter" data-jsonurl="/jsonapi">
+
+
+<nav>
+<h1>Filtre</h1>
+<form method="GET" action="/shop/">
+<!-- catalog.filter.csrf -->
+<input class="csrf-token" type="hidden" name="_token" value="bcmq7Iqxjnx_gVOqMgcSfiBdflYYv93yohQtK1RXNqs"><!-- catalog.filter.csrf -->
+
+<section class="catalog-filter-search">
+
+<h2>Recherche</h2>
+<div class="input-group search_head">
+<input class="form-control value ui-autocomplete-input" placeholder="Rechercher un produit,artisan..." type="text" name="f_search" value="" data-url="/shop/suggest" data-hint="Entrez au moins 3 caractères" autocomplete="off"><!--
+--><!--<button class="btn btn-default reset" type="reset">-->
+
+<!--
+--><button class="btn btn-primary glass" type="submit">
+<!-- ?= $enc->html( $this->translate( 'client', 'Go' ), $enc::TRUST ); ?> -->
+</button>
+</div>
+
+</section>
+<!-- ?= $this->block()->get( 'catalog/filter/tree' ); ?>
+?= $this->block()->get( 'catalog/filter/supplier' ); ?>
+?= $this->block()->get( 'catalog/filter/attribute' ); ?> -->
+
+</form>
+</nav>
+
+</section>
+ <a href="/login">Se connecter</a>
+<a href="/register">Créer un compte</a><i class="far fa-user-circle"></i>
+<div class="total">0,00c</div> 
+</div>
+</header>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <div class='home_head'>
+        <h2>C'est nouveau c'est arrivé chez Ulimi!!!</h2>
+        <h4>Les produits du Printemps sont disponibles sur notre site.</h4>
+    </div>
+    <div class='pres_home'>
+        <div class='video_home'>
+        </div>
+        <img src='/files/mascotte.png' alt='mascotte' title='mascotte'>
+    </div>
+     <section>
+            <div class="title_producteur">
+                <div>Nos producteurs, investis pour une agriculture durable</div>
+                <button class="button_background-purple precedent">Précédent</button>
+                <button class="button_background-purple suivant">Suivant</button>
+            </div>
+
+            <div class="container_slide">
+                <div class="container_slide-second">
+                    <div class="container_silde-third">
+                        <img src="/files/slider3_homepage.png" class="image" alt="Fontenay">
+                    </div>
+                    <div class="description_picture">
+                        <div>La ferme de Fontenay</div>
+                        <div class="description_picture-adress">58 rue Anatole France, 77610</div>
+                        <div class="description_picture-place">Producteur de fruits et légumes en Seine-et-Marne</div>
+                        <button class="button_background-yellow">Voir plus</button>
+                    </div>
+                </div>
+
+                <div class="container_slide-second">
+                    <div class="container_silde-third">
+                        <img src="/files/slider2_homepage.png" class="image" alt="Fontenay">
+                    </div>
+                    <div class="description_picture">
+                        <div>La ferme de Fontenay</div>
+                        <div class="description_picture-adress">58 rue Anatole France, 77610</div>
+                        <div class="description_picture-place">Producteur de fruits et légumes en Seine-et-Marne</div>
+                        <button class="button_background-yellow">Voir plus</button>
+                    </div>
+                </div>
+
+                <div class="container_slide-second">
+                    <div class="container_silde-third">
+                        <img src="/files/slider_homepage.png" class="image" alt="Fontenay">
+                    </div>
+                    <div class="description_picture">
+                        <div>La ferme de Fontenay</div>
+                        <div class="description_picture-adress">58 rue Anatole France, 77610</div>
+                        <div class="description_picture-place">Producteur de fruits et légumes en Seine-et-Marne</div>
+                        <button class="button_background-yellow">Voir plus</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final_section">
+            <div class="container_comand">
+                <div>
+                    <img src="/files/cart_fruits.png" alt="mearicon" class="mearicon">
+                    <div>Ulimi vous propose de choisir votre panier de</div>
+                    <div>produits</div>
+                </div>
+                <div class="container_comand-btn">
+                    <div class="command_month">Commandez chaque mois votre panier ULIMI</div>
+                    <div>composé des produits de votre choix</div>
+                    <div class="before_button">N’attendez plus</div>
+                    <button class="button_background-purple Commandez">Commandez dès maintenant</button>
+                </div>
+                    {# <img src="/files/img_home_footer.png" alt="pattern" class="pattern"> #}
+            </div>
+        </section>
+
+    </body>
+</html>

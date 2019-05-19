@@ -136,15 +136,23 @@ $enc = $this->encoder();
 </nav>
 
 </section>
-            
-           
+ <?php           
+if( 1){?>
+	<a href='/login'>Se connecter</a>
+	<a href='/register'>Créer un compte</a><?php
+	}else{?>
+	
+	<?php
+}
+?>
             <i class="far fa-user-circle"></i>
             <div class="total">0,00c</div> 
         </div>
     </header>
     
-    <div class="submenu">
-        <div class="background_purple"><a href="">PRIMEUR</a></div>
+    <div class="submenu" id="myTopnav">
+		
+	<div class="background_purple"><a href="">PRIMEUR</a></div>
         <div>|</div>
         <div class="background_purple"><a href="">PRODUITS LAITIERS</a></div>
         <div>|</div>
@@ -156,5 +164,3 @@ $enc = $this->encoder();
         <div>|</div>
         <div class="background_purple"><a href="">PARTENARIATS</a></div>
     </div>
-
-
