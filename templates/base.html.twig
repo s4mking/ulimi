@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block aimeos_header %}{% endblock %}
+        <title>{% block title %}Aimeos shop{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% block aimeos_styles %}{% endblock %}
+  {% block stylesheets %}
+            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+            {{ encore_entry_link_tags('app') }}
+
+            <!-- Renders a link tag (if your module requires any CSS)
+                 <link rel="stylesheet" href="/build/app.css"> -->
+        {% endblock %}
+    </head>
+    <body>
+        {# <div class="navbar navbar-static" role="navigation">
+        <!-- ajoput samuel nav menu!-->
+
+    
+
+       
+
+        <!-- fin ajoput samuel nav menu!-->
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+          </div> #}
+
+
+{# Modif sam pour ajout dans header #}
+        </div>
+        <div class='header-nav'>
+            {% block aimeos_head %}{% endblock %}
+            {% block aimeos_nav %}{% endblock %}
+        </div>
+        <div class="col-xs-12">
+            
+            {% block aimeos_stage %}{% endblock %}
+            {% block aimeos_body %}{% endblock %}
+            {% block aimeos_aside %}{% endblock %}
+        </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% block aimeos_scripts %}{% endblock %}
+{% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+
+            <!-- Renders app.js & a webpack runtime.js file
+                <script src="/build/runtime.js"></script>
+                <script src="/build/app.js"></script> -->
+        {% endblock %}
+    </body>
+</html>

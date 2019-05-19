@@ -1,0 +1,18 @@
+aimeos_shop:
+    madmin:
+        cache:
+            manager:
+                name: None
+    resource:
+        fs:
+            # baseurl: "https://symfonyecommerce.com/"
+            baseurl: "http://127.0.0.1:8000/"
+            basedir: "%kernel.root_dir%/../public"
+        fs-admin:
+            basedir: "%kernel.root_dir%/../public/uploads"
+    mshop:
+        customer:
+            manager:
+                name: FosUser
+                password:
+                    name: Bcrypt
