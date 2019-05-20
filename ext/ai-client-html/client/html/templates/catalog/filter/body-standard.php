@@ -102,65 +102,29 @@ $enc = $this->encoder();
 
 
 ?>
-<!-- /*Ajout sam*/ -->
+<section class="aimeos catalog-filter" data-jsonurl="<?= $enc->attr( $this->url( $optTarget, $optCntl, $optAction, [], [], $optConfig ) ); ?>">
 
-           
+	<?php if( isset( $this->filterErrorList ) ) : ?>
+		<ul class="error-list">
+			<?php foreach( (array) $this->filterErrorList as $errmsg ) : ?>
+				<li class="error-item"><?= $enc->html( $errmsg ); ?></li>
+			<?php endforeach; ?>
+		</ul>
+	<?php endif; ?>
 
-<header>
-        <div class='content_header'>
-            <a href='http://127.0.0.1:8000'><img src="http://127.0.0.1:8000/files/logo.png" alt="Logo" class="logo"></a>
-            <div class="accessibility">Site accessible <i class="fas fa-chevron-down"></i></div>
-			<section class="aimeos catalog-filter" data-jsonurl="<?= $enc->attr( $this->url( $optTarget, $optCntl, $optAction, [], [], $optConfig ) ); ?>">
+	<nav>
+		<h1><?= $enc->html( $this->translate( 'client', 'Filter' ), $enc::TRUST ); ?></h1>
+		<form method="GET" action="<?= $enc->attr( $this->url( $listTarget, $listController, $listAction, $listParams, [], $listConfig ) ); ?>">
+			<!-- catalog.filter.csrf -->
+			<?= $this->csrf()->formfield(); ?>
+			<!-- catalog.filter.csrf -->
 
-<?php if( isset( $this->filterErrorList ) ) : ?>
-	<ul class="error-list">
-		<?php foreach( (array) $this->filterErrorList as $errmsg ) : ?>
-			<li class="error-item"><?= $enc->html( $errmsg ); ?></li>
-		<?php endforeach; ?>
-	</ul>
-<?php endif; ?>
+			<?= $this->block()->get( 'catalog/filter/search' ); ?>
+			<?= $this->block()->get( 'catalog/filter/tree' ); ?>
+			<?= $this->block()->get( 'catalog/filter/supplier' ); ?>
+			<?= $this->block()->get( 'catalog/filter/attribute' ); ?>
 
-<nav>
-	<h1><?= $enc->html( $this->translate( 'client', 'Filter' ), $enc::TRUST ); ?></h1>
-	<form method="GET" action="<?= $enc->attr( $this->url( $listTarget, $listController, $listAction, $listParams, [], $listConfig ) ); ?>">
-		<!-- catalog.filter.csrf -->
-		<?= $this->csrf()->formfield(); ?>
-		<!-- catalog.filter.csrf -->
-
-		<?= $this->block()->get( 'catalog/filter/search' ); ?>
-		<!-- ?= $this->block()->get( 'catalog/filter/tree' ); ?>
-		?= $this->block()->get( 'catalog/filter/supplier' ); ?>
-		?= $this->block()->get( 'catalog/filter/attribute' ); ?> -->
-
-	</form>
-</nav>
+		</form>
+	</nav>
 
 </section>
- <?php           
-if( 1){?>
-	<a href='/login'>Se connecter</a>
-	<a href='/register'>Créer un compte</a><?php
-	}else{?>
-	
-	<?php
-}
-?>
-            <i class="far fa-user-circle"></i>
-            <div class="total">0,00c</div> 
-        </div>
-    </header>
-    
-    <div class="submenu" id="myTopnav">
-		
-	<div class="background_purple"><a href="">PRIMEUR</a></div>
-        <div>|</div>
-        <div class="background_purple"><a href="">PRODUITS LAITIERS</a></div>
-        <div>|</div>
-        <div class="background_purple"><a href="">BOULANGERIE</a></div>
-        <div>|</div>
-        <div class="background_purple"><a href="">BOISSONS</a></div>
-        <div>|</div>
-        <div class="background_purple"><a href="">EMBALLAGES</a></div>
-        <div>|</div>
-        <div class="background_purple"><a href="">PARTENARIATS</a></div>
-    </div>

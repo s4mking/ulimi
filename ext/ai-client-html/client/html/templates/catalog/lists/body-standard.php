@@ -110,12 +110,7 @@ if( $this->get( 'listProductTotal', 0 ) > 1 && $this->config( 'client/html/catal
 
 ?>
 <section class="aimeos catalog-list<?= $enc->attr( $classes ); ?>" data-jsonurl="<?= $enc->attr( $this->url( $optTarget, $optCntl, $optAction, [], [], $optConfig ) ); ?>">
-<div class='engagement'>
-	<h2>Trouvez le producteur près de chez vous et retirez vos courses directement chez lui </h2>
-	<div class='livraison_catalog'>
-		
-	</div>	
-</div>
+
 	<?php if( isset( $this->listErrorList ) ) : ?>
 		<ul class="error-list">
 			<?php foreach( (array) $this->listErrorList as $errmsg ) : ?>
@@ -153,10 +148,10 @@ if( $this->get( 'listProductTotal', 0 ) > 1 && $this->config( 'client/html/catal
 
 
 	<?php if( ( $total = $this->get( 'listProductTotal', 0 ) ) > 0 ) : ?>
-		<!-- <div class="catalog-list-type">
+		<div class="catalog-list-type">
 			<a class="type-item type-grid" href="<?= $enc->attr( $this->url( $target, $cntl, $action, array( 'l_type' => 'grid' ) + $params, [], $config ) ); ?>"></a>
 			<a class="type-item type-list" href="<?= $enc->attr( $this->url( $target, $cntl, $action, array( 'l_type' => 'list' ) + $params, [], $config ) ); ?>"></a>
-		</div> -->
+		</div>
 	<?php endif; ?>
 
 

@@ -17,17 +17,15 @@ $enc = $this->encoder();
 			<nav>
 
 				<?php if( isset( $this->navigationPrev ) ) : ?>
-				<button class="btn btn--purple"><a href="<?= $enc->attr( $this->navigationPrev ); ?>" rel="prev">
+					<a class="prev" href="<?= $enc->attr( $this->navigationPrev ); ?>" rel="prev">
 						<?= $enc->html( $this->translate( 'client', 'Previous' ), $enc::TRUST ); ?>
-					</a></button>
-					
+					</a>
 				<?php endif; ?>
 
 				<?php if( isset( $this->navigationNext ) ) : ?>
-				<button class="btn btn--purple"><a href="<?= $enc->attr( $this->navigationNext ); ?>" rel="next">
+					<a class="next" href="<?= $enc->attr( $this->navigationNext ); ?>" rel="next">
 						<?= $enc->html( $this->translate( 'client', 'Next' ), $enc::TRUST ); ?>
-					</a></button>
-					
+					</a>
 				<?php endif; ?>
 
 			</nav>

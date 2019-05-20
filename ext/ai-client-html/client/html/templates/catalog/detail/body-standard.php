@@ -122,7 +122,7 @@ if( isset( $this->detailProductItem ) )
 
 		<article class="product row <?= ( isset( $conf['css-class'] ) ? $conf['css-class'] : '' ); ?>" data-id="<?= $this->detailProductItem->getId(); ?>">
 
-			<div class="col-sm-4">
+			<div class="col-sm-7">
 				<?= $this->partial(
 					/** client/html/catalog/detail/partials/image
 					 * Relative path to the detail image partial template file
@@ -289,22 +289,13 @@ if( isset( $this->detailProductItem ) )
 									name="<?= $enc->attr( $this->formparam( array( 'b_prod', 0, 'prodid' ) ) ); ?>"
 									value="<?= $enc->attr( $this->detailProductItem->getId() ); ?>"
 								/>
-								<div class='plusmoins'>
-									<div onclick="this.parentNode.querySelector('input[type=number]').stepDown()" >-</div>
-									<input type="number" class="form-control input-lg" <?= $disabled ?>
-										name="<?= $enc->attr( $this->formparam( array( 'b_prod', 0, 'quantity' ) ) ); ?>"
-										min="1" max="2147483647" maxlength="10" step="1" required="required" value="1"
-									/>
-									<div onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</div>
-								</div>
-								
-								<!-- <input type="button" class="button_number" onclick="decreaseValue()" value="-" />
-								<input type="button" id='button_number' class="button_number" onclick="incrementValue()" value="+" /> -->
-								<div>
-									<button class="btn btn--yellow-clear" type="submit" value="" <?= $disabled ?> >
-										<?= $enc->html( $this->translate( 'client', 'Ajouter au panier' ), $enc::TRUST ); ?>
-									</button>
-								</div>	
+								<input type="number" class="form-control input-lg" <?= $disabled ?>
+									name="<?= $enc->attr( $this->formparam( array( 'b_prod', 0, 'quantity' ) ) ); ?>"
+									min="1" max="2147483647" maxlength="10" step="1" required="required" value="1"
+								/>
+								<button class="btn btn-primary btn-lg" type="submit" value="" <?= $disabled ?> >
+									<?= $enc->html( $this->translate( 'client', 'Add to basket' ), $enc::TRUST ); ?>
+								</button>
 							</div>
 						</div>
 
@@ -350,16 +341,7 @@ if( isset( $this->detailProductItem ) )
 					$this->config( 'client/html/catalog/partials/social', 'catalog/social-partial-standard' ),
 					array( 'productItem' => $this->detailProductItem )
 				); ?>
-				<div id="deliver">
-                    <div class="delivery">
-                        <div class="cercle for_truck"><img src="http://127.0.0.1:8000/files/tractor@2x.png" alt="Truck delivery"></div>
-                        <div> <p>Livraison chez le producteur</p></div>
-                    </div>
-                    <div class="delivery">
-                        <div class="cercle for_home"><img src="http://127.0.0.1:8000/files/shipped@2x.png" alt="Truck delivery"></div>
-                        <div><p>Livraison à domicile</p></div>
-                    </div>
-                </div>
+
 			</div>
 
 
@@ -542,9 +524,9 @@ if( isset( $this->detailProductItem ) )
 					</section>
 
 				<?php endif; ?>
-				
+
 			</div>
-						
+
 		</article>
 	<?php endif; ?>
 

@@ -9,7 +9,7 @@
 $enc = $this->encoder();
 $phrase = $enc->attr( $this->param( 'f_search' ) );
 $name = $enc->attr( $this->formparam( 'f_search' ) );
-$hint = $this->translate( 'client', 'Entrez au moins 3 caractères' );
+$hint = $this->translate( 'client', 'Please enter at least three characters' );
 
 /** client/html/catalog/suggest/url/target
  * Destination of the URL where the controller specified in the URL is known
@@ -106,16 +106,16 @@ $suggestUrl = $enc->attr( $this->url( $suggestTarget, $suggestController, $sugge
 <section class="catalog-filter-search">
 
 	<h2><?= $enc->html( $this->translate( 'client', 'Search' ), $enc::TRUST ); ?></h2>
-	<div class="input-group search_head">
-		<input class="form-control value" placeholder='Rechercher un produit,artisan...' type="text"
+	<div class="input-group">
+		<input class="form-control value" type="text"
 			name="<?= $name; ?>" value="<?= $phrase; ?>"
 			data-url="<?= $suggestUrl; ?>" data-hint="<?= $hint; ?>"
 		/><!--
-		--><!--<button class="btn btn-default reset" type="reset">-->
-			
+		--><button class="btn btn-default reset" type="reset">
+			<span class="symbol"/>
 		</button><!--
-		--><button class="btn btn-primary glass" type="submit">
-			<!-- ?= $enc->html( $this->translate( 'client', 'Go' ), $enc::TRUST ); ?> -->
+		--><button class="btn btn-primary" type="submit">
+			<?= $enc->html( $this->translate( 'client', 'Go' ), $enc::TRUST ); ?>
 		</button>
 	</div>
 
