@@ -115,7 +115,7 @@ $priceFormat = $this->translate( 'client', '%1$s %2$s' );
 
 
 ?>
-<section class="aimeos basket-mini" data-jsonurl="<?= $enc->attr( $this->url( $jsonTarget, $jsonController, $jsonAction, $basketParams, [], $jsonConfig ) ); ?>">
+<!-- <section class="aimeos basket-mini" data-jsonurl="<= $enc->attr( $this->url( $jsonTarget, $jsonController, $jsonAction, $basketParams, [], $jsonConfig ) ); ?>"> -->
 
 	<?php if( ( $errors = $this->get( 'miniErrorList', [] ) ) !== [] ) : ?>
 		<ul class="error-list">

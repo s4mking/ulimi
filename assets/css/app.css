@@ -616,3 +616,65 @@ body .fos_user_registration_register div div{
     display:flex;
     justify-content: space-around;
 }
+
+body .home_head{
+    width:100vw;
+    height:45vh;
+    padding-top:5vh;
+    background-image: url('/files/back_home_fruits.png');
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.pres_home{
+    display:flex;
+    margin-top:10vh;
+    align-items: center;
+}
+
+.video_home{
+    width:70%;
+    height:45vh;
+    margin-left:12%;
+
+    background-color:#A88888;
+}
+.pres_home img{
+    width:182px;
+    height:238px;
+}
+
+.bande{
+    width:100vw;
+    height:128px;
+    background-image: url('/files/banner_filigrane.png');
+}
+
+body .fos_user_registration_register{
+   display: flex;
+   flex-direction: column;
+width:70%;
+margin:auto;
+align-items: center;
+}
+body .fos_user_registration_register div div{
+    display:flex;
+    justify-content: space-around;
+}
+
+body .catalog-list .product{
+    border:0;
+}
+
+body .aimeos .product .text-list h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: underline;
+    color:#354F90;
+    font-size:1.3em;
+}
+body .aimeos .price-list{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:1.6em;
+}
+.header-nav{
+    background-color:var(--yellow-clear);
+}

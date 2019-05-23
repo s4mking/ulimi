@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block aimeos_header %}{% endblock %}
+        <title>{% block title %}Aimeos shop{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% block aimeos_styles %}{% endblock %}
+  {% block stylesheets %}
+            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+            {{ encore_entry_link_tags('app') }}
+
+            <!-- Renders a link tag (if your module requires any CSS)
+                 <link rel="stylesheet" href="/build/app.css"> -->
+        {% endblock %}
+    </head>
+    <body>
+    
+        {# <div class="navbar navbar-static" role="navigation">
+        <!-- ajoput samuel nav menu!-->
+{# Modif sam pour ajout dans header #}
+        {# </div> #}
+        {# <div class='header-nav'> #}
+         {# {% block aimeos_head %}{% endblock %}
+         {% block aimeos_nav %}{% endblock %}
+            #}
+            {# {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'Se connecter'}}</a>
+            {% endif %} #}
+            <div class='header-nav'>
+            {% block aimeos_head %}{% endblock %}
+             {% block aimeos_nav %} {% endblock %}
+         
+       
+        </div>
+        {# </div> #}
+        <div class="col-xs-12">
+           <script async>(function(w, d) { w.CollectId = "5ce5784d0e4b2e52093c42b7"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+            {% block aimeos_stage %}{% endblock %}
+            {% block aimeos_body %}{% endblock %}
+            {% block aimeos_aside %}{% endblock %}
+        </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+{% block aimeos_scripts %}{% endblock %}
+{% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+
+            <!-- Renders app.js & a webpack runtime.js file
+                <script src="/build/runtime.js"></script>
+                <script src="/build/app.js"></script> -->
+        {% endblock %}
+    </body>
+</html>
