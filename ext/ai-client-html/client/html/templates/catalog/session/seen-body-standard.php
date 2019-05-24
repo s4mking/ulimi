@@ -30,10 +30,11 @@ $count = $this->config( 'client/html/catalog/session/seen/count/enable', 1 );
 <section class="catalog-session-seen">
 
 	<h2 class="header">
-		<?= $this->translate( 'client', 'Last seen' ); ?>
-		<?php if( $count ) : ?>
-			<span class="count"><?= count( $seenList ); ?></span>
-		<?php endif; ?>
+		Suggestion
+		<!-- < $this->translate( 'client', 'Last seen' ); ?>
+		?php if( $count ) : ?>
+			<span class="count"><= count( $seenList ); ?></span>
+		<pp endif; ?> -->
 	</h2>
 
 	<ul class="seen-items">

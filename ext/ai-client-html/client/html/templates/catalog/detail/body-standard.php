@@ -289,11 +289,15 @@ if( isset( $this->detailProductItem ) )
 									name="<?= $enc->attr( $this->formparam( array( 'b_prod', 0, 'prodid' ) ) ); ?>"
 									value="<?= $enc->attr( $this->detailProductItem->getId() ); ?>"
 								/>
-								<input type="number" class="form-control input-lg" <?= $disabled ?>
-									name="<?= $enc->attr( $this->formparam( array( 'b_prod', 0, 'quantity' ) ) ); ?>"
-									min="1" max="2147483647" maxlength="10" step="1" required="required" value="1"
-								/>
-								<button class="btn btn-primary btn-lg" type="submit" value="" <?= $disabled ?> >
+								<div class='buttons_product'>
+									<input type="button" class="button_number" onclick="decreaseValue()" value="-" />
+									<input type="number" class="form-control input-lg" <?= $disabled ?>
+										name="<?= $enc->attr( $this->formparam( array( 'b_prod', 0, 'quantity' ) ) ); ?>"
+										min="1" max="2147483647" maxlength="10" step="1" required="required" value="1"
+									/>
+									<input type="button" class="button_number" onclick="incrementValue()" value="+" />
+								</div>	
+								<button class="btn btn-primary btn-lg add_panier" type="submit" value="" <?= $disabled ?> >
 									<?= $enc->html( $this->translate( 'client', 'Add to basket' ), $enc::TRUST ); ?>
 								</button>
 							</div>

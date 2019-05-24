@@ -678,3 +678,26 @@ body .aimeos .price-list{
 .header-nav{
     background-color:var(--yellow-clear);
 }
+body .catalog-session-pinned{
+    display: none;
+}
+.catalog-stage-navigator a{
+    background-color:var(--purple);
+    color:white;
+}
+body .aimeos .catalog-stage-navigator a:link:not(.btn), body .aimeos .catalog-stage-navigator a:visited:not(.btn){
+    background-color:var(--purple);
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+}
+
+body .aimeos .add_panier,
+body .aimeos .add_panier:hover{
+    background-color:var(--yellow-clear);
+    border:0;
+    color:black;
+}
+body .buttons_product{
+    display:flex;
+}
