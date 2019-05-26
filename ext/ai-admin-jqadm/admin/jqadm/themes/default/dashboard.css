@@ -247,3 +247,10 @@
 .dashboard .order-servicepayment .legend-item {
 	display: block;
 }
+.aimeos .sidebar-menu .language,
+.aimeos .sidebar-menu .locale,
+.aimeos .sidebar-menu .plugin,
+.aimeos .sidebar-menu .coupon,
+.aimeos .sidebar-menu .supplier{
+	display:none;
+}

@@ -36,64 +36,74 @@ $enc = $this->encoder();
 	<div class='sub'>
 		<h3>Sous-catégorie</h3>
 		<div>
-		<label for="huey">Yaourts</label>
+		<label for="huey">Yaourts
 			<input type="radio" id="huey" name="drone" value="huey" class="radio_border-purple"	checked>
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			</label>
 		</div>
 
 		<div>
-		<label for="dewey">Crèmes</label>
+		<label for="dewey">Crèmes
 			<input type="radio" id="dewey" name="drone" value="dewey" class="radio_border-purple">
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			</label>
 		</div>
 		<div>
-		<label for="louie">Laitages</label>
+		<label for="louie">Laitages
 			<input type="radio" id="louie" name="drone" value="louie" class="radio_border-purple">
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			</label>
 		</div>
 		</div>
 	<div class='sub'>
 		<h3>Saison</h3>
 		<div>
-		<label for="huey">Printemps</label>
+		<label for="huey">Printemps
 			<input type="radio" id="huey" name="season" value="Printemps" class="radio_border-purple" checked>
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			</label>
 		</div>
 
 		<div>
-		<label for="dewey">Eté</label>
+		<label for="dewey">Eté
 			<input type="radio" id="dewey" name="season" value="Eté" class="radio_border-purple">
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			</label>
 		</div>
 		<div>
-		<label for="louie">Automne</label>
+		<label for="louie">Automne
 			<input type="radio" id="louie" name="season" value="Automne" class="radio_border-purple">
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			</label>
 		</div>
 		<div>
-		<label for="louie">Hiver</label>
+		<label for="louie">Hiver
 			<input type="radio" id="louie" name="season" value="Hiver" class="radio_border-purple">
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			</label>
 		</div>
 	</div>
 
 	<div class='sub'>
 		<h3>Prix</h3>
 		<div>
-		<label for="huey">0-10€</label>
+		<label for="huey">0-10€
 			<input type="radio" id="huey" name="money" value="0" class="radio_border-purple" checked>
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			</label>
 		</div>
 
 		<div>
-		<label for="dewey">10-50€</label>
+		<label for="dewey">10-50€
 			<input type="radio" id="dewey" name="money" value="dewey" class="radio_border-purple">
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			</label>
 		</div>
 		<div>
-		<label for="louie">50-100€</label>
+		<label for="louie">50-100€
 			<input type="radio" id="louie" name="money" value="louie" class="radio_border-purple">
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			</label>
 		</div>
 	</div>
 	<button class="button_background-yellow">Valider</button>

@@ -1209,3 +1209,58 @@ body .buttons_product .add_panier{
         border-radius: 5px;
         border:1px solid lightgrey;
     }
+
+   .left_menu [type="radio"] {
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px;
+  }
+  
+  /* One radio button per line */
+  .left_menu label {
+    display:flex;
+    padding-left:10px;
+    justify-content: space-between;
+    width:90%;
+    cursor: pointer;
+    line-height: 2.5;
+    font-size: 1em;
+  }
+  
+  .left_menu [type="radio"] + span {
+    /* display: block; */
+    justify-self: flex-end;
+  }
+  
+  /* the basic, unchecked style */
+  .left_menu [type="radio"] + span:before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.25em;
+    border-radius: 1em;
+    border: 0.125em solid #fff;
+    box-shadow: 0 0 0 0.15em #000;
+    margin-right: 0.75em;
+    transition: 0.5s ease all;
+  }
+  
+  /* the checked style using the :checked pseudo class */
+  .left_menu [type="radio"]:checked + span:before {
+    background: var(--purple);
+    box-shadow: 0 0 0 0.25em #000;
+  }
+  
+  /* never forget focus styling */
+  .left_menu [type="radio"]:focus + span:after {
+    /* content: '\0020\2190'; */
+    font-size: 1.5em;
+    line-height: 1;
+    vertical-align: -0.125em;
+  }
+  
