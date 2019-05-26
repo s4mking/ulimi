@@ -14,6 +14,12 @@ $optConfig = $this->config( 'client/jsonapi/url/config', [] );
 
 
 ?>
+<h1>Mon compte</h1>
+<ul>
+	<li><a href="/profile/edit">Modifier mon compte</a></li>
+	<li><a href="/profile/change-password">Modifier mon mot de passe</a></li>
+	<li><a href="/logout">Se déconnecter</a></li>
+</ul>
 <section class="aimeos account-subscription" data-jsonurl="<?= $enc->attr( $this->url( $optTarget, $optCntl, $optAction, [], [], $optConfig ) ); ?>">
 
 	<?php if( ( $errors = $this->get( 'subscriptionErrorList', [] ) ) !== [] ) : ?>

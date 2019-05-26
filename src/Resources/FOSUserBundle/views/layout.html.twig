@@ -1,5 +1,142 @@
-{% block title %}Demo Application{% endblock %}
+  <head>
+    
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block aimeos_header %}{% endblock %}
+        <title>{% block title %}Ulimi{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% block aimeos_styles %}{% endblock %}
+  {% block stylesheets %}
+            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+            {{ encore_entry_link_tags('app') }}
 
+            <!-- Renders a link tag (if your module requires any CSS)
+                 <link rel="stylesheet" href="/build/app.css"> -->
+        {% endblock %}
+    </head>
+ <header>
+        <div class="container">
+            <a href='http://127.0.0.1:8000/'><img src="/files/img/logo_ulimi.png" alt="Logo" class="logo"></a>
+            <ul id="menu-demo2" class="flex">
+                <li class="accessibility">Site accessible <i class="fas fa-chevron-down"></i>
+                    <ul>
+                        <li><a href="#">Ce site est accessible pour</a></li>
+                        <li><a href="#">les personnes présentant :</a></li>
+                        <li><img src="/files/img/brain.png" alt="Cerveau"><a href="#">Déficiences intellectuelles</a></li>
+                        <li><img src="/files/img/hearing.png" alt="Oreille"><a href="#">Sourdité</a></li>
+                        <li><img src="/files/img/private.png" alt="Privé"><a href="#">Malvoyants</a></li>
+                    </ul>
+                </li>
+            </ul>
+<section class="catalog-filter-search">
+<div class="input-group">
+<input class="form-control value ui-autocomplete-input" type="text" name="f_search" value="" data-url="/shop/suggest" placeholder="Recherchez un produit..." data-hint="Entrez au moins trois caractères s'il vous plaît" autocomplete="off">
+</div>
+ <img src="/files/img/eb0bde5e86b9e55ff548664f6741d618.png" alt="Search" class="search">
+</section>
+            {# <input type="text" name="f_search" placeholder="Rechercher un produit, artisan…" data-url="/shop/suggest"> #}
+           
+          <a href='/myaccount'>  <img src="/files/img/fef11cb58a1cc62d899379610e350f23.png" class="search profile" alt="Profile"></a>
+             <div class='header-nav'>
+            {% block aimeos_head %}{% endblock %}
+            {% block aimeos_nav %}{% endblock %}
+        </div>
+            {# <img src="/files/img/8dde5192f90414d7d85cf821f88c7804.png" class="search shopping" alt="Shopping"> #}
+            {# <div class="total">0,00c</div>  #}
+        </div>
+    </header>
+     <ul class="submenu" id="menu-demo2">
+        <li class="background_purple"><a href="#">PRIMEUR</a>
+            <ul>
+                <li><a href="http://127.0.0.1:8000/shop/">Légumes</a></li>
+                <li><a href="http://127.0.0.1:8000/shop/">Fruits</a></li>
+                <li><a href="http://127.0.0.1:8000/shop/">Aromates</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">PRODUITS LAITIERS</a>
+            <ul>
+                <li><a href="#">Fromage</a></li>
+                <li><a href="#">Lait</a></li>
+                <li><a href="#">Yaourt</a></li>
+                <li><a href="#">Crème</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">BOULANGERIE</a>
+            <ul>
+                <li><a href="#">Pain</a></li>
+                <li><a href="#">Pâte artisanale</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">BOISSONS</a>
+            <ul>
+                <li><a href="#">Jus</a></li>
+                <li><a href="#">Vin</a></li>
+                <li><a href="#">Bière/cidre</a></li>
+                <li><a href="#">Spritueux</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">EMBALLAGES</a>
+            <ul>
+                <li><a href="#">Bocal</a></li>
+                <li><a href="#">Boite</a></li>
+                <li><a href="#">LOREM IPSUM</a></li>
+                <li><a href="#">LOREM IPSUM</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">PARTENARIATS</a></li>
+    </ul>
+    <div class='form_fos'>
 {% block content %}
     {% block fos_user_content %}{% endblock %}
 {% endblock %}
+</div>
+ <footer>
+        <div class="footer_div-main">
+            <div class="footer_div">
+                <div>
+                    <div>PRIMEUR</div>
+                    <div>Fruits</div>
+                    <div>Légumes</div>
+                    <div>Aromate</div>
+                </div>
+                <div class="footer_div-first">
+                    <div>PRODUITS LAITIERS</div>
+                    <div>Fromage</div>
+                    <div>Lait</div>
+                    <div>Yaourt</div>
+                    <div>Crème</div>
+                </div>
+                <div class="footer_div-first">
+                    <div>BOULANGERIE</div>
+                    <div>Pain</div>
+                    <div>Pâte artisanale</div>
+                </div>
+                <div class="footer_div-first">
+                    <div>BOISSONS</div>
+                    <div>Jus</div>
+                    <div>Vins</div>
+                    <div>Bière/cidre</div>
+                    <div>Spiritueux</div>
+                </div>
+                <div class="footer_div-first">
+                    <div>EMBALLAGES</div>
+                </div>
+                <div class="footer_div-first">
+                    <div>REJOIGNEZ-VOUS</div>
+                    <div>
+                        <img src="/files/img/logo_facebook.png" alt="facebook">
+                        <img src="/files/img/logo_instagram.png" alt="instagram">
+                        <img src="/files/img/logo_linkedin.png" alt="linkedin">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
