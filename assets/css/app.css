@@ -911,7 +911,7 @@ input {
 }
 
 footer {
-    margin-top: 10%;
+    /* margin-top: 10%; */
     background: #5C5B59;
     color: white;
 }
@@ -925,7 +925,8 @@ footer {
 }
 
 .footer_div {
-    margin-top: 100px;
+    margin: 10vh 0;
+    width:60%;
     display: flex;
     justify-content: space-around;
 }
@@ -934,7 +935,22 @@ footer {
     margin-left: 5%;
 }
 
-
+.basket-standard-coupon{
+    display:none;
+}
+body .aimeos .btn-primary,
+body .aimeos .btn-primary:hover{
+    background-color:var(--yellow-clear);
+    border:1px solid #ccc;
+    color:black;
+    width:20vw;
+}
+.aimeos .common-summary-detail td.quantity input{
+    background-color: transparent;
+}
+.coupon{
+    display:none;
+}
 .footer_div-first img {
     margin-top: 10%;
     height: 20px;
@@ -1157,4 +1173,17 @@ body .buttons_product .add_panier{
 
     .catalog-detail-basket .service-intro{
         color:black;
+    }
+    .file_dl{
+        margin:20px 0;
+        cursor: pointer;
+        align-items: center;
+    }
+
+    .footer_div div div:first-child{
+        margin-bottom:10px;
+    }
+
+    .account-subscription .header, .account-history .header, .account-watch .header, .account-favorite .header, .basket-related-bought .header, .catalog-session .header, .catalog-detail .header{
+        border-bottom:1px solid var(--purple);
     }

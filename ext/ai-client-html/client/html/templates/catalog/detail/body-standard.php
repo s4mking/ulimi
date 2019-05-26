@@ -228,7 +228,10 @@ if( isset( $this->detailProductItem ) )
 										<?php endforeach; ?>
 																</div>
 							</div>
-						
+							<div id="file" class='file_dl'>
+									<div><img src="/files/file.png" alt="file"></div>
+									<div><p>Télécharger en pdf</p></div>
+								</div>
 					<?php endif; ?>
 					<?php if( isset( $this->detailProductItem ) ) : ?>
 						<div class="price-list">

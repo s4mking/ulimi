@@ -73,7 +73,8 @@ $stepActive = $this->get( 'standardStepActive', false );
 
 		</ol>
 	</nav>
-
+	<a class="btn btn-default btn-lg btn-back" href="/shop/">
+Accueil</a>
 
 	<?php if( isset( $this->standardErrorList ) ) : ?>
 		<ul class="error-list">
