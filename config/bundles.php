@@ -18,4 +18,6 @@ return [
     Aimeos\ShopBundle\AimeosShopBundle::class => ['all' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
+    Craue\FormFlowBundle\CraueFormFlowBundle::class => ['all' => true],
+    Naviapps\Bundle\FOSUserBundle\NaviappsFOSUserBundle::class => ['all' => true],
 ];

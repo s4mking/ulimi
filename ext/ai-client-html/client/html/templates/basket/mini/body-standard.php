@@ -138,8 +138,9 @@ $priceFormat = $this->translate( 'client', '%1$s %2$s' );
 		?>
 
 		<h1><?= $enc->html( $this->translate( 'client', 'Basket' ), $enc::TRUST ); ?></h1>
-
+		
 		<a href="<?= $enc->attr( $this->url( $basketTarget, $basketController, $basketAction, $basketParams, [], $basketConfig ) ); ?>">
+		<!-- <img src="/files/img/8dde5192f90414d7d85cf821f88c7804.png" class="search shopping" alt="Shopping"> -->
 			<div class="basket-mini-main">
 				<span class="quantity">
 					<?= $enc->html( $quantity ); ?>

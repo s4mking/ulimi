@@ -50,6 +50,9 @@
     "composer/installers": {
         "version": "v1.6.0"
     },
+    "craue/formflow-bundle": {
+        "version": "3.1.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -179,6 +182,9 @@
     },
     "monolog/monolog": {
         "version": "1.24.0"
+    },
+    "naviapps/fos-user-bundle": {
+        "version": "1.0-dev"
     },
     "nikic/php-parser": {
         "version": "v4.2.1"

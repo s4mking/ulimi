@@ -44,21 +44,12 @@ body {
     
 }
 
-body .aimeos .addbasket .btn {
-    border-radius: 5px;
-    width: 140px;
-    height: 35px;
-    align-self: center;
-}
 
 .btn--purple {
     background: var(--purple);
     color: white;
 }
-.aimeos .catalog-detail-basket .input-group .btn{
-width:150px;
-font: 400 11px system-ui;
-}
+
 #yaourt {
     width: 300px;
 }
@@ -145,15 +136,7 @@ body .aimeos .btn--yellow-clear {
     margin-top: 6px;
 }
 
-#number {
-    width: 20px;
-    height: 20px;
-    font-size: 15px;
-    text-align: center;
-}
-
 .button_number {
-    font-size: 50px;
     text-align: center;
     
 }
@@ -267,6 +250,8 @@ margin-left:0px;
 
 header {
     background-color: #F9E76E;
+    padding:5px 0;
+    width:100vw;
 }
 
 .logo {
@@ -276,11 +261,6 @@ header {
 
 .container {
     display: flex;
-}
-
-.accessibility {
-    margin-top: 2%;
-    margin-left: 5%;
 }
 /*Bah oui on a qua toucher a toutes les kinputs du site sérieusement cxest quoi leur pbm*/
 /* input {
@@ -293,46 +273,14 @@ header {
     background-color: #F9E76E;
 } */
 
-.search {
-    height: 25px;
-    width: 25px;
-    margin-top: 2%;
-}
 
-.fa-search {
-    height: 25px;
-    width: 25px;
-    margin-top: 2%;
-}
-
-.fa-user-circle {
-    height: 25px;
-    width: 25px;
-    margin-top: 1.7%;
-    margin-left: 17%;
-    font-size: 28px;
-}
-
-.fa-shopping-cart {
+/* .fa-shopping-cart {
     height: 25px;
     width: 25px;
     margin-top: 1.7%;
     font-size: 28px;
     margin-left: 3%;
-}
-
-.profile {
-    margin-left: 17%;
-}
-
-.total {
-    margin-top: 3%;
-    margin-left: 1%;
-}
-
-.shopping {
-    margin-left: 4%;
-}
+} */
 
 .submenu {
     background: white;
@@ -551,7 +499,7 @@ body .navbar{
 }
 body .catalog-filter-search .value{
     background-color: transparent;
-    width:80%;
+    width:100%;
     border:0;
 }
 
@@ -567,9 +515,7 @@ body .input-group .glass{
     background-color: transparent;
     border:0px;
 }
-body .input-group{
-    border-bottom: 1px solid black;
-}
+
 .aimeos .search_head {
     width: 150%;
 }
@@ -604,7 +550,10 @@ body .home_head{
     height:128px;
     background-image: url('/files/banner_filigrane.png');
 }
-
+.catalog-filter-search .ui-autocomplete-input{
+    font-size: 10px;
+    color:black;
+}
 body .fos_user_registration_register{
    display: flex;
    flex-direction: column;
@@ -705,46 +654,64 @@ body .buttons_product{
 
 
 .logo {
-    height: 60px;
-    width: 60px;
+   width:60%;
     margin-left: 5%;
 }
 
 .container {
     display: flex;
-    align-content: row;
+   align-items: center;
+   justify-content: space-around;
+   width:100%;
 }
 
 
-
+body .basket-mini {
+    background-color:transparent;
+    color: black;
+}
+.basket-mini > a:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    vertical-align: middle;
+    content: "\f07a";
+    font-size: 220%;
+    color: black;
+}
+body .aimeos a:link:not(.btn), body .aimeos a:visited:not(.btn) {
+    color: black;
+}
 input {
-    margin-left: 10%;
+    /* margin-left: 10%; */
     display:block;
     border:none;
     border-bottom:1px solid #000000;
     width:20%;
     background-color: #F9E76E;
 }
-
+.basket-mini a:hover{
+    text-decoration: none;
+}
+.basket-mini .search{
+    display: none;
+}
 .search {
     height: 25px;
     width: 25px;
-    margin-top: 2%;
+   margin-left:19%;
+}
+.basket-mini-main span,
+.basket-mini-product .basket-toggle.toggle-close:after,
+.basket-mini-product .basket-toggle.toggle-open:after{
+    color:black;
 }
 
-.profile {
-    margin-left: 17%;
+.catalog-filter-search input{
+    box-shadow: none;
+    color:black;
 }
-
-.total {
-    margin-top: 3%;
-    margin-left: 1%;
+.catalog-filter-search{
+    border-bottom: 1px solid black;
 }
-
-.shopping {
-    margin-left: 4%;
-}
-
 .submenu {
     background: white;
     display: flex;
@@ -977,7 +944,7 @@ footer {
 
 .accessibility {
     background-color: #F9E76E;
-    margin-top: 15%;
+    /* margin-top: 15%; */
     /* margin-left: 25%; */
 }
 
@@ -992,28 +959,20 @@ body{
     width:50%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #menu-demo2, #menu-demo2 ul{
     padding:0;
     margin:0;
     list-style:none;
+    
+    }
+    body .catalog-filter-search{
+        display:flex;
+        width:12vw;
+        padding-bottom: 3px;
+        align-items: center;
+    }
+    .submenu{
+        border-bottom:1px solid #707070;
     }
     #menu-demo2 li{
     display:inline-block;
@@ -1021,7 +980,7 @@ body{
     }
 
     #menu-demo2 li a {
-    color: #707070 !important;
+    color: #323231 !important;
     }
 
     #menu-demo2 li:hover a {
@@ -1039,15 +998,19 @@ body{
     left: 0;
     right: 0;
     overflow:hidden;
-    -moz-transition: .8s all .3s;
-    -webkit-transition: .8s all .3s;
-    transition: .8s all .3s;
+    -moz-transition: .4s all .0s;
+    -webkit-transition: .4s all .0s;
+    transition: .4s all .0s;
     }
     #menu-demo2 li:hover ul{
     max-height:15em;
+ 
+    
     }
     /* background des liens menus */
-
+    #menu-demo2 li:hover ul li{
+        /* padding:5px; */
+    }
     #menu-demo2 li {
     background-color: white;
     padding-top:2vh;
@@ -1105,9 +1068,9 @@ header #menu-demo2 li a {
     font-size: 15px;
 }
 
-header #menu-demo2, #menu-demo2 ul {
+/* header #menu-demo2, #menu-demo2 ul {
     width: 200px;
-}
+} */
 
 header #menu-demo2 img {
     width: 20px;
@@ -1122,6 +1085,13 @@ display:flex;
 }
 body .left_menu{
     width:20%;
+    border-right: 2px solid #733450;
+    padding-right:1.5%;
+    height:fit-content;
+    
+}
+body .left_menu .sub{
+   
 }
 body .left_menu h3{
     color:#733450;
@@ -1132,6 +1102,7 @@ body .left_menu h3{
 body .left_menu .sub div{
     display: flex;
    margin:1vh 0;
+   justify-content: space-between;
     align-items: center;
 }
 
@@ -1142,3 +1113,48 @@ body .catalog-filter-attribute,
 body .catalog-list-type{
     display:none;
 }
+
+
+body .attributes .attr-name{
+    color:#733450;
+    padding-bottom:5px;
+    width:fit-content;
+    border-bottom: 1px solid #733450;
+    text-transform: capitalize;
+   margin-bottom:10px;
+   margin-top:15px;
+}
+.attr-short{
+    color:black;
+}
+
+
+.aimeos .addbasket .buttons_product input{
+    background-color: transparent;
+    border-color:lightgray;
+    margin-right:2%;
+    width:2vw;
+    height:5vh;
+}
+
+
+body .aimeos .addbasket .btn {
+    border-radius: 5px;
+}
+body .buttons_product .add_panier{
+    margin-top:2vh;
+}
+.aimeos .catalog-detail-basket .input-group .btn{
+    width:auto;
+    margin-top:20px;
+    font: 400 15px system-ui;
+    padding:10px 25px;
+    }
+
+    .aimeos .catalog-detail-basket .input-group .input-lg{
+        padding:0;
+    }
+
+    .catalog-detail-basket .service-intro{
+        color:black;
+    }

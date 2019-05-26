@@ -122,7 +122,7 @@ if( isset( $this->detailProductItem ) )
 
 		<article class="product row <?= ( isset( $conf['css-class'] ) ? $conf['css-class'] : '' ); ?>" data-id="<?= $this->detailProductItem->getId(); ?>">
 
-			<div class="col-sm-7">
+			<div class="col-sm-5">
 				<?= $this->partial(
 					/** client/html/catalog/detail/partials/image
 					 * Relative path to the detail image partial template file
@@ -160,7 +160,76 @@ if( isset( $this->detailProductItem ) )
 
 
 				<div class="catalog-detail-basket" data-reqstock="<?= $reqstock; ?>" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-
+				<?php if( count( $attrMap ) > 0 || count( $this->detailProductItem->getRefItems( 'attribute', null, 'default' ) ) > 0 ) : ?>
+						
+							
+							<div class="content attributes">
+								<div class="attributes">
+									
+										<?php foreach( $this->detailProductItem->getRefItems( 'attribute', null, 'default' ) as $attrId => $attrItem ) : ?>
+											<?php if( isset( $attrItems[ $attrId ] ) ) { $attrItem = $attrItems[ $attrId ]; } ?>
+											<div class="item">
+												<!-- <td class="name"><= $enc->html( $this->translate( 'client/code', $attrItem->getType() ), $enc::TRUST ); ?></td> -->
+												<div class="value">
+													<div class="media-list">
+														<?php foreach( $attrItem->getListItems( 'media', 'icon' ) as $listItem ) : ?>
+															<?php if( ( $item = $listItem->getRefItem() ) !== null ) : ?>
+																<?= $this->partial(
+																	$this->config( 'client/html/common/partials/media', 'common/partials/media-standard' ),
+																	array( 'item' => $item, 'boxAttributes' => array( 'class' => 'media-item' ) )
+																); ?>
+															<?php endif; ?>
+														<?php endforeach; ?>
+													</div>
+													<h4 class="attr-name"><?= $enc->html( $attrItem->getName() ); ?></h4>
+													<?php foreach( $attrItem->getRefItems( 'text', 'short' ) as $textItem ) : ?>
+														<div class="attr-short"><?= $enc->html( $textItem->getContent() ); ?></div>
+													<?php endforeach ?>
+													<?php foreach( $attrItem->getRefItems( 'text', 'long' ) as $textItem ) : ?>
+														<div class="attr-long"><?= $enc->html( $textItem->getContent() ); ?></div>
+													<?php endforeach ?>
+															</div>
+															</div>
+										<?php endforeach; ?>
+										<?php foreach( $attrMap as $type => $attrItems ) : ?>
+											<?php foreach( $attrItems as $attrItem ) : $classes = ""; ?>
+												<?php
+													if( isset( $subAttrDeps[ $attrItem->getId() ] ) )
+													{
+														$classes .= ' subproduct';
+														foreach( $subAttrDeps[ $attrItem->getId() ] as $prodid ) {
+															$classes .= ' subproduct-' . $prodid;
+														}
+													}
+												?>
+												<div class="item<?= $classes; ?>">
+													<!-- <td class="name"><= $enc->html( $this->translate( 'client/code', $type ), $enc::TRUST ); ?></td> -->
+													<div class="value">
+														<div class="media-list">
+															<?php foreach( $attrItem->getListItems( 'media', 'icon' ) as $listItem ) : ?>
+																<?php if( ( $item = $listItem->getRefItem() ) !== null ) : ?>
+																	<?= $this->partial(
+																		$this->config( 'client/html/common/partials/media', 'common/partials/media-standard' ),
+																		array( 'item' => $item, 'boxAttributes' => array( 'class' => 'media-item' ) )
+																	); ?>
+																<?php endif; ?>
+															<?php endforeach; ?>
+														</div>
+														<h4 class="attr-name"><?= $enc->html( $attrItem->getName() ); ?></h4>
+														<?php foreach( $attrItem->getRefItems( 'text', 'short' ) as $textItem ) : ?>
+															<div class="attr-short"><?= $enc->html( $textItem->getContent() ); ?></div>
+														<?php endforeach ?>
+														<?php foreach( $attrItem->getRefItems( 'text', 'long' ) as $textItem ) : ?>
+															<div class="attr-long"><?= $enc->html( $textItem->getContent() ); ?></div>
+														<?php endforeach ?>
+																</div>
+																</div>
+											<?php endforeach; ?>
+										<?php endforeach; ?>
+																</div>
+							</div>
+						
+					<?php endif; ?>
 					<?php if( isset( $this->detailProductItem ) ) : ?>
 						<div class="price-list">
 							<div class="articleitem price price-actual"
@@ -289,18 +358,28 @@ if( isset( $this->detailProductItem ) )
 									name="<?= $enc->attr( $this->formparam( array( 'b_prod', 0, 'prodid' ) ) ); ?>"
 									value="<?= $enc->attr( $this->detailProductItem->getId() ); ?>"
 								/>
-								<div class='buttons_product'>
-									<input type="button" class="button_number" onclick="decreaseValue()" value="-" />
-									<input type="number" class="form-control input-lg" <?= $disabled ?>
+								<div class='buttons_product '>
+									<input type="button" id='decrease' class="button_number" onclick="decreaseValue()" value="-" />
+									<input type="number" id='number' class="form-control input-lg" <?= $disabled ?>
 										name="<?= $enc->attr( $this->formparam( array( 'b_prod', 0, 'quantity' ) ) ); ?>"
 										min="1" max="2147483647" maxlength="10" step="1" required="required" value="1"
 									/>
-									<input type="button" class="button_number" onclick="incrementValue()" value="+" />
+									<input type="button" id='increase' class="button_number" onclick="incrementValue()" value="+" />
 								</div>	
 								<button class="btn btn-primary btn-lg add_panier" type="submit" value="" <?= $disabled ?> >
 									<?= $enc->html( $this->translate( 'client', 'Add to basket' ), $enc::TRUST ); ?>
 								</button>
 							</div>
+							<div id="deliver">
+									<div class="delivery">
+										<div class="cercle for_truck"><img src="/files/truck.png" alt="Truck delivery"></div>
+										<div> <p>Livraison chez le producteur</p></div>
+									</div>
+									<div class="delivery">
+										<div class="cercle for_home"><img src="/files/truck2.png" alt="Truck delivery"></div>
+										<div><p>Livraison à domicile</p></div>
+									</div>
+								</div>
 						</div>
 
 					</form>
@@ -377,78 +456,8 @@ if( isset( $this->detailProductItem ) )
 							</div>
 						</div>
 					<?php endif; ?>
-
-					<?php if( count( $attrMap ) > 0 || count( $this->detailProductItem->getRefItems( 'attribute', null, 'default' ) ) > 0 ) : ?>
-						<div class="additional-box">
-							<h2 class="header attributes"><?= $enc->html( $this->translate( 'client', 'Characteristics' ), $enc::TRUST ); ?></h2>
-							<div class="content attributes">
-								<table class="attributes">
-									<tbody>
-										<?php foreach( $this->detailProductItem->getRefItems( 'attribute', null, 'default' ) as $attrId => $attrItem ) : ?>
-											<?php if( isset( $attrItems[ $attrId ] ) ) { $attrItem = $attrItems[ $attrId ]; } ?>
-											<tr class="item">
-												<td class="name"><?= $enc->html( $this->translate( 'client/code', $attrItem->getType() ), $enc::TRUST ); ?></td>
-												<td class="value">
-													<div class="media-list">
-														<?php foreach( $attrItem->getListItems( 'media', 'icon' ) as $listItem ) : ?>
-															<?php if( ( $item = $listItem->getRefItem() ) !== null ) : ?>
-																<?= $this->partial(
-																	$this->config( 'client/html/common/partials/media', 'common/partials/media-standard' ),
-																	array( 'item' => $item, 'boxAttributes' => array( 'class' => 'media-item' ) )
-																); ?>
-															<?php endif; ?>
-														<?php endforeach; ?>
-													</div>
-													<span class="attr-name"><?= $enc->html( $attrItem->getName() ); ?></span>
-													<?php foreach( $attrItem->getRefItems( 'text', 'short' ) as $textItem ) : ?>
-														<div class="attr-short"><?= $enc->html( $textItem->getContent() ); ?></div>
-													<?php endforeach ?>
-													<?php foreach( $attrItem->getRefItems( 'text', 'long' ) as $textItem ) : ?>
-														<div class="attr-long"><?= $enc->html( $textItem->getContent() ); ?></div>
-													<?php endforeach ?>
-												</td>
-											</tr>
-										<?php endforeach; ?>
-										<?php foreach( $attrMap as $type => $attrItems ) : ?>
-											<?php foreach( $attrItems as $attrItem ) : $classes = ""; ?>
-												<?php
-													if( isset( $subAttrDeps[ $attrItem->getId() ] ) )
-													{
-														$classes .= ' subproduct';
-														foreach( $subAttrDeps[ $attrItem->getId() ] as $prodid ) {
-															$classes .= ' subproduct-' . $prodid;
-														}
-													}
-												?>
-												<tr class="item<?= $classes; ?>">
-													<td class="name"><?= $enc->html( $this->translate( 'client/code', $type ), $enc::TRUST ); ?></td>
-													<td class="value">
-														<div class="media-list">
-															<?php foreach( $attrItem->getListItems( 'media', 'icon' ) as $listItem ) : ?>
-																<?php if( ( $item = $listItem->getRefItem() ) !== null ) : ?>
-																	<?= $this->partial(
-																		$this->config( 'client/html/common/partials/media', 'common/partials/media-standard' ),
-																		array( 'item' => $item, 'boxAttributes' => array( 'class' => 'media-item' ) )
-																	); ?>
-																<?php endif; ?>
-															<?php endforeach; ?>
-														</div>
-														<span class="attr-name"><?= $enc->html( $attrItem->getName() ); ?></span>
-														<?php foreach( $attrItem->getRefItems( 'text', 'short' ) as $textItem ) : ?>
-															<div class="attr-short"><?= $enc->html( $textItem->getContent() ); ?></div>
-														<?php endforeach ?>
-														<?php foreach( $attrItem->getRefItems( 'text', 'long' ) as $textItem ) : ?>
-															<div class="attr-long"><?= $enc->html( $textItem->getContent() ); ?></div>
-														<?php endforeach ?>
-													</td>
-												</tr>
-											<?php endforeach; ?>
-										<?php endforeach; ?>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					<?php endif; ?>
+			
+				
 
 					<?php if( count( $propMap ) > 0 ) : ?>
 						<div class="additional-box">
@@ -530,7 +539,7 @@ if( isset( $this->detailProductItem ) )
 				<?php endif; ?>
 
 			</div>
-
+			
 		</article>
 	<?php endif; ?>
 

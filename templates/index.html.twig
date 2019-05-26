@@ -16,9 +16,9 @@
         {% endblock %}
 </head>
 <body>
-    <header>
+ <header>
         <div class="container">
-            <img src="/files/img/logo_ulimi.png" alt="Logo" class="logo">
+            <a href='http://127.0.0.1:8000/'><img src="/files/img/logo_ulimi.png" alt="Logo" class="logo"></a>
             <ul id="menu-demo2" class="flex">
                 <li class="accessibility">Site accessible <i class="fas fa-chevron-down"></i>
                     <ul>
@@ -30,12 +30,22 @@
                     </ul>
                 </li>
             </ul>
+<section class="catalog-filter-search">
+<div class="input-group">
+<input class="form-control value ui-autocomplete-input" type="text" name="f_search" placeholder="Recherchez un produit..." data-url="/shop/suggest" data-hint="Entrez au moins trois caractères s'il vous plaît" autocomplete="off">
 
-            <input type="text" placeholder="Rechercher un produit, artisan…">
-            <img src="/files/img/eb0bde5e86b9e55ff548664f6741d618.png" alt="Search" class="search">
+</div>
+<img src="/files/img/eb0bde5e86b9e55ff548664f6741d618.png" alt="Search" class="search">
+</section>
+            {# <input type="text" name="f_search" placeholder="Rechercher un produit, artisan…" data-url="/shop/suggest"> #}
+            
             <img src="/files/img/fef11cb58a1cc62d899379610e350f23.png" class="search profile" alt="Profile">
-            <img src="/files/img/8dde5192f90414d7d85cf821f88c7804.png" class="search shopping" alt="Shopping">
-            <div class="total">0,00c</div> 
+             <div class='header-nav'>
+            {% block aimeos_head %}{% endblock %}
+            {% block aimeos_nav %}{% endblock %}
+        </div>
+            {# <img src="/files/img/8dde5192f90414d7d85cf821f88c7804.png" class="search shopping" alt="Shopping"> #}
+            {# <div class="total">0,00c</div>  #}
         </div>
     </header>
     <ul class="submenu" id="menu-demo2">

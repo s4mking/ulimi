@@ -12,16 +12,16 @@ require('../css/app.css');
 // const $ = require('jquery');
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
-function incrementValue() {
+
+document.querySelector('#increase').addEventListener('click',function(){
     var value = parseInt(document.getElementById('number').value, 10);
     value = isNaN(value) ? 0 : value;
     value++;
     document.getElementById('number').value = value;
-}
-
-function decreaseValue() {
+})
+document.querySelector('#decrease').addEventListener('click',function(){
     var value = parseInt(document.getElementById('number').value, 10);
     value = isNaN(value) ? 0 : value;
     value--;
     document.getElementById('number').value = value;
-}
+})

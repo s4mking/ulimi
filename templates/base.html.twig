@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+    
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 {% block aimeos_header %}{% endblock %}
-        <title>{% block title %}Aimeos shop{% endblock %}</title>
+        <title>{% block title %}Ulimi{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -57,18 +58,19 @@
             </ul>
 <section class="catalog-filter-search">
 <div class="input-group">
-<input class="form-control value ui-autocomplete-input" type="text" name="f_search" value="" data-url="/shop/suggest" data-hint="Entrez au moins trois caractères s'il vous plaît" autocomplete="off">
+<input class="form-control value ui-autocomplete-input" type="text" name="f_search" value="" data-url="/shop/suggest" placeholder="Recherchez un produit..." data-hint="Entrez au moins trois caractères s'il vous plaît" autocomplete="off">
 </div>
+ <img src="/files/img/eb0bde5e86b9e55ff548664f6741d618.png" alt="Search" class="search">
 </section>
             {# <input type="text" name="f_search" placeholder="Rechercher un produit, artisan…" data-url="/shop/suggest"> #}
-            <img src="/files/img/eb0bde5e86b9e55ff548664f6741d618.png" alt="Search" class="search">
+           
             <img src="/files/img/fef11cb58a1cc62d899379610e350f23.png" class="search profile" alt="Profile">
              <div class='header-nav'>
             {% block aimeos_head %}{% endblock %}
             {% block aimeos_nav %}{% endblock %}
         </div>
-            <img src="/files/img/8dde5192f90414d7d85cf821f88c7804.png" class="search shopping" alt="Shopping">
-            <div class="total">0,00c</div> 
+            {# <img src="/files/img/8dde5192f90414d7d85cf821f88c7804.png" class="search shopping" alt="Shopping"> #}
+            {# <div class="total">0,00c</div>  #}
         </div>
     </header>
     <ul class="submenu" id="menu-demo2">

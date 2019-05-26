@@ -23,6 +23,14 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
-
+# ajout multi flow form qui marche putain de pas;.............
+    # Multistepform.form.flow.createMultistepform:
+    #     class: Multistepform\Form\Createmultistepform
+    #     parent: craue.form.flow    
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+naviapps_fos_user:
+    # ...
+    registration:
+        form:
+            flow: AppBundle\Form\RegistrationFlow
