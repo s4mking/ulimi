@@ -8,6 +8,7 @@
         "aimeos/ai-payments": "^2019.04",
         "aimeos/aimeos-symfony": "~2019.04",
         "league/omnipay": "^3.0",
+        "knplabs/knp-menu-bundle":"dev-master",
         "omnipay/stripe": "^3.0",
         "php-http/guzzle6-adapter": "~1.0",
         "sensio/framework-extra-bundle": "^5.3",

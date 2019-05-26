@@ -41,12 +41,85 @@
 
 {# Modif sam pour ajout dans header #}
         </div>
-        <div class='header-nav'>
+            <header>
+        <div class="container">
+            <a href='http://127.0.0.1:8000/'><img src="/files/img/logo_ulimi.png" alt="Logo" class="logo"></a>
+            <ul id="menu-demo2" class="flex">
+                <li class="accessibility">Site accessible <i class="fas fa-chevron-down"></i>
+                    <ul>
+                        <li><a href="#">Ce site est accessible pour</a></li>
+                        <li><a href="#">les personnes présentant :</a></li>
+                        <li><img src="/files/img/brain.png" alt="Cerveau"><a href="#">Déficiences intellectuelles</a></li>
+                        <li><img src="/files/img/hearing.png" alt="Oreille"><a href="#">Sourdité</a></li>
+                        <li><img src="/files/img/private.png" alt="Privé"><a href="#">Malvoyants</a></li>
+                    </ul>
+                </li>
+            </ul>
+<section class="catalog-filter-search">
+<div class="input-group">
+<input class="form-control value ui-autocomplete-input" type="text" name="f_search" value="" data-url="/shop/suggest" data-hint="Entrez au moins trois caractères s'il vous plaît" autocomplete="off">
+</div>
+</section>
+            {# <input type="text" name="f_search" placeholder="Rechercher un produit, artisan…" data-url="/shop/suggest"> #}
+            <img src="/files/img/eb0bde5e86b9e55ff548664f6741d618.png" alt="Search" class="search">
+            <img src="/files/img/fef11cb58a1cc62d899379610e350f23.png" class="search profile" alt="Profile">
+             <div class='header-nav'>
             {% block aimeos_head %}{% endblock %}
             {% block aimeos_nav %}{% endblock %}
         </div>
+            <img src="/files/img/8dde5192f90414d7d85cf821f88c7804.png" class="search shopping" alt="Shopping">
+            <div class="total">0,00c</div> 
+        </div>
+    </header>
+    <ul class="submenu" id="menu-demo2">
+        <li class="background_purple"><a href="#">PRIMEUR</a>
+            <ul>
+                <li><a href="http://127.0.0.1:8000/shop/">Légumes</a></li>
+                <li><a href="http://127.0.0.1:8000/shop/">Fruits</a></li>
+                <li><a href="http://127.0.0.1:8000/shop/">Aromates</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">PRODUITS LAITIERS</a>
+            <ul>
+                <li><a href="#">Fromage</a></li>
+                <li><a href="#">Lait</a></li>
+                <li><a href="#">Yaourt</a></li>
+                <li><a href="#">Crème</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">BOULANGERIE</a>
+            <ul>
+                <li><a href="#">Pain</a></li>
+                <li><a href="#">Pâte artisanale</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">BOISSONS</a>
+            <ul>
+                <li><a href="#">Jus</a></li>
+                <li><a href="#">Vin</a></li>
+                <li><a href="#">Bière/cidre</a></li>
+                <li><a href="#">Spritueux</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">EMBALLAGES</a>
+            <ul>
+                <li><a href="#">Bocal</a></li>
+                <li><a href="#">Boite</a></li>
+                <li><a href="#">LOREM IPSUM</a></li>
+                <li><a href="#">LOREM IPSUM</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">PARTENARIATS</a></li>
+    </ul>
+       
         <div class="col-xs-12">
-            
+                       <script async>(function(w, d) { w.CollectId = "5ce5784d0e4b2e52093c42b7"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+
             {% block aimeos_stage %}{% endblock %}
             {% block aimeos_body %}{% endblock %}
             {% block aimeos_aside %}{% endblock %}

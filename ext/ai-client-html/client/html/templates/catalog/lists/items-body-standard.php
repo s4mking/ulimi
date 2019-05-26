@@ -32,7 +32,72 @@ $enc = $this->encoder();
 ?>
 <?php $this->block()->start( 'catalog/lists/items' ); ?>
 <div class="catalog-list-items">
+<div class="left_menu">
+	<div class='sub'>
+		<h3>Sous-catégorie</h3>
+		<div>
+		<label for="huey">Yaourts</label>
+			<input type="radio" id="huey" name="drone" value="huey" class="radio_border-purple"	checked>
+			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+		</div>
 
+		<div>
+		<label for="dewey">Crèmes</label>
+			<input type="radio" id="dewey" name="drone" value="dewey" class="radio_border-purple">
+			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+		</div>
+		<div>
+		<label for="louie">Laitages</label>
+			<input type="radio" id="louie" name="drone" value="louie" class="radio_border-purple">
+			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+		</div>
+		</div>
+	<div class='sub'>
+		<h3>Saison</h3>
+		<div>
+		<label for="huey">Printemps</label>
+			<input type="radio" id="huey" name="season" value="Printemps" class="radio_border-purple" checked>
+			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+		</div>
+
+		<div>
+		<label for="dewey">Eté</label>
+			<input type="radio" id="dewey" name="season" value="Eté" class="radio_border-purple">
+			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+		</div>
+		<div>
+		<label for="louie">Automne</label>
+			<input type="radio" id="louie" name="season" value="Automne" class="radio_border-purple">
+			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+		</div>
+		<div>
+		<label for="louie">Hiver</label>
+			<input type="radio" id="louie" name="season" value="Hiver" class="radio_border-purple">
+			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+		</div>
+	</div>
+
+	<div class='sub'>
+		<h3>Prix</h3>
+		<div>
+		<label for="huey">0-10€</label>
+			<input type="radio" id="huey" name="money" value="0" class="radio_border-purple" checked>
+			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+		</div>
+
+		<div>
+		<label for="dewey">10-50€</label>
+			<input type="radio" id="dewey" name="money" value="dewey" class="radio_border-purple">
+			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+		</div>
+		<div>
+		<label for="louie">50-100€</label>
+			<input type="radio" id="louie" name="money" value="louie" class="radio_border-purple">
+			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+		</div>
+	</div>
+	<button class="button_background-yellow">Valider</button>
+</div>
 	<?= $this->partial(
 		$this->config( 'client/html/common/partials/products', 'common/partials/products-standard' ),
 		array(

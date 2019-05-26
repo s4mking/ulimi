@@ -1,138 +1,207 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-{% block aimeos_header %}{% endblock %}
-        <title>{% block title %}Aimeos shop{% endblock %}</title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-{% block aimeos_styles %}{% endblock %}
-  {% block stylesheets %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="Acceuil.css">
+      {% block stylesheets %}
             {# 'app' must match the first argument to addEntry() in webpack.config.js #}
             {{ encore_entry_link_tags('app') }}
 
             <!-- Renders a link tag (if your module requires any CSS)
                  <link rel="stylesheet" href="/build/app.css"> -->
         {% endblock %}
-    </head>
-    <body>
-    
-       <header>
-<div class="content_header">
-<a href="http://127.0.0.1:8000"><img src="http://127.0.0.1:8000/files/logo.png" alt="Logo" class="logo"></a>
-<div class="accessibility">Site accessible <i class="fas fa-chevron-down"></i></div>
-<section class="aimeos catalog-filter" data-jsonurl="/jsonapi">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="/files/img/logo_ulimi.png" alt="Logo" class="logo">
+            <ul id="menu-demo2" class="flex">
+                <li class="accessibility">Site accessible <i class="fas fa-chevron-down"></i>
+                    <ul>
+                        <li><a href="#">Ce site est accessible pour</a></li>
+                        <li><a href="#">les personnes présentant :</a></li>
+                        <li><img src="/files/img/brain.png" alt="Cerveau"><a href="#">Déficiences intellectuelles</a></li>
+                        <li><img src="/files/img/hearing.png" alt="Oreille"><a href="#">Sourdité</a></li>
+                        <li><img src="/files/img/private.png" alt="Privé"><a href="#">Malvoyants</a></li>
+                    </ul>
+                </li>
+            </ul>
 
-
-<nav>
-<h1>Filtre</h1>
-<form method="GET" action="/shop/">
-<!-- catalog.filter.csrf -->
-<input class="csrf-token" type="hidden" name="_token" value="bcmq7Iqxjnx_gVOqMgcSfiBdflYYv93yohQtK1RXNqs"><!-- catalog.filter.csrf -->
-
-<section class="catalog-filter-search">
-
-<h2>Recherche</h2>
-<div class="input-group search_head">
-<input class="form-control value ui-autocomplete-input" placeholder="Rechercher un produit,artisan..." type="text" name="f_search" value="" data-url="/shop/suggest" data-hint="Entrez au moins 3 caractères" autocomplete="off"><!--
---><!--<button class="btn btn-default reset" type="reset">-->
-
-<!--
---><button class="btn btn-primary glass" type="submit">
-<!-- ?= $enc->html( $this->translate( 'client', 'Go' ), $enc::TRUST ); ?> -->
-</button>
-</div>
-
-</section>
-<!-- ?= $this->block()->get( 'catalog/filter/tree' ); ?>
-?= $this->block()->get( 'catalog/filter/supplier' ); ?>
-?= $this->block()->get( 'catalog/filter/attribute' ); ?> -->
-
-</form>
-</nav>
-
-</section>
- <a href="/login">Se connecter</a>
-<a href="/register">Créer un compte</a><i class="far fa-user-circle"></i>
-<div class="total">0,00c</div> 
-</div>
-</header>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <div class='home_head'>
-        <h2>C'est nouveau c'est arrivé chez Ulimi!!!</h2>
-        <h4>Les produits du Printemps sont disponibles sur notre site.</h4>
-    </div>
-    <div class='pres_home'>
-        <div class='video_home'>
+            <input type="text" placeholder="Rechercher un produit, artisan…">
+            <img src="/files/img/eb0bde5e86b9e55ff548664f6741d618.png" alt="Search" class="search">
+            <img src="/files/img/fef11cb58a1cc62d899379610e350f23.png" class="search profile" alt="Profile">
+            <img src="/files/img/8dde5192f90414d7d85cf821f88c7804.png" class="search shopping" alt="Shopping">
+            <div class="total">0,00c</div> 
         </div>
-        <img src='/files/mascotte.png' alt='mascotte' title='mascotte'>
+    </header>
+    <ul class="submenu" id="menu-demo2">
+        <li class="background_purple"><a href="#">PRIMEUR</a>
+            <ul>
+                <li><a href="http://127.0.0.1:8000/shop/">Légumes</a></li>
+                <li><a href="http://127.0.0.1:8000/shop/">Fruits</a></li>
+                <li><a href="http://127.0.0.1:8000/shop/">Aromates</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">PRODUITS LAITIERS</a>
+            <ul>
+                <li><a href="#">Fromage</a></li>
+                <li><a href="#">Lait</a></li>
+                <li><a href="#">Yaourt</a></li>
+                <li><a href="#">Crème</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">BOULANGERIE</a>
+            <ul>
+                <li><a href="#">Pain</a></li>
+                <li><a href="#">Pâte artisanale</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">BOISSONS</a>
+            <ul>
+                <li><a href="#">Jus</a></li>
+                <li><a href="#">Vin</a></li>
+                <li><a href="#">Bière/cidre</a></li>
+                <li><a href="#">Spritueux</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">EMBALLAGES</a>
+            <ul>
+                <li><a href="#">Bocal</a></li>
+                <li><a href="#">Boite</a></li>
+                <li><a href="#">LOREM IPSUM</a></li>
+                <li><a href="#">LOREM IPSUM</a></li>
+            </ul>
+        </li>
+        <li>|</li>
+        <li class="background_purple"><a href="#">PARTENARIATS</a></li>
+    </ul>
+
+    <div class="image_home">
+        <div class="image_home-text">
+            <div class="image_home-news">C’est nouveau, ç’est arrivé chez Ulimi</div>
+            <div class="image_home-produits">Les produits du printemps sont</div>
+            <div>disponibles sur notre site</div>
+        </div>
     </div>
-     <section>
-            <div class="title_producteur">
-                <div>Nos producteurs, investis pour une agriculture durable</div>
-                <button class="button_background-purple precedent">Précédent</button>
-                <button class="button_background-purple suivant">Suivant</button>
-            </div>
 
-            <div class="container_slide">
-                <div class="container_slide-second">
-                    <div class="container_silde-third">
-                        <img src="/files/slider3_homepage.png" class="image" alt="Fontenay">
-                    </div>
-                    <div class="description_picture">
-                        <div>La ferme de Fontenay</div>
-                        <div class="description_picture-adress">58 rue Anatole France, 77610</div>
-                        <div class="description_picture-place">Producteur de fruits et légumes en Seine-et-Marne</div>
-                        <button class="button_background-yellow">Voir plus</button>
-                    </div>
+    <section class="section">
+        <div class="rectangle_purple"></div>
+        <div class="list"></div>
+        <img src="/files/img/Pictos-img/Accueil/pattern2.svg" alt="pattern" class="pattern2">
+    </section>
+
+    <section>
+        <div class="title_producteur">
+            <div>Nos producteurs, investis pour une agriculture durable</div>
+            <button class="button_background-purple precedent">Précédent</button>
+            <button class="button_background-purple suivant">Suivant</button>
+        </div>
+
+        <div class="container_slide">
+            <div class="container_slide-second">
+                <div class="container_silde-third">
+                    <img src="/files/img/Pictos-img/Accueil/photo-1508928807352-24a4adbb6795.jpeg" class="image" alt="Fontenay">
                 </div>
-
-                <div class="container_slide-second">
-                    <div class="container_silde-third">
-                        <img src="/files/slider2_homepage.png" class="image" alt="Fontenay">
-                    </div>
-                    <div class="description_picture">
-                        <div>La ferme de Fontenay</div>
-                        <div class="description_picture-adress">58 rue Anatole France, 77610</div>
-                        <div class="description_picture-place">Producteur de fruits et légumes en Seine-et-Marne</div>
-                        <button class="button_background-yellow">Voir plus</button>
-                    </div>
-                </div>
-
-                <div class="container_slide-second">
-                    <div class="container_silde-third">
-                        <img src="/files/slider_homepage.png" class="image" alt="Fontenay">
-                    </div>
-                    <div class="description_picture">
-                        <div>La ferme de Fontenay</div>
-                        <div class="description_picture-adress">58 rue Anatole France, 77610</div>
-                        <div class="description_picture-place">Producteur de fruits et légumes en Seine-et-Marne</div>
-                        <button class="button_background-yellow">Voir plus</button>
-                    </div>
+                <div class="description_picture">
+                    <div>La ferme de Fontenay</div>
+                    <div class="description_picture-adress">58 rue Anatole France, 77610</div>
+                    <div class="description_picture-place">Producteur de fruits et légumes en Seine-et-Marne</div>
+                    <button class="button_background-yellow">Voir plus</button>
                 </div>
             </div>
-        </section>
 
-        <section class="final_section">
-            <div class="container_comand">
+            <div class="container_slide-second">
+                <div class="container_silde-third">
+                    <img src="/files/img/Pictos-img/Accueil/photo-1517686469429-8bdb88b9f907.jpeg" class="image" alt="Fontenay">
+                </div>
+                <div class="description_picture">
+                    <div>La ferme de Fontenay</div>
+                    <div class="description_picture-adress">58 rue Anatole France, 77610</div>
+                    <div class="description_picture-place">Producteur de fruits et légumes en Seine-et-Marne</div>
+                    <button class="button_background-yellow">Voir plus</button>
+                </div>
+            </div>
+
+            <div class="container_slide-second">
+                <div class="container_silde-third">
+                    <img src="/files/img/Pictos-img/Accueil/photo-1476554123255-b0ff6b30dcd8.jpeg" class="image" alt="Fontenay">
+                </div>
+                <div class="description_picture">
+                    <div>La ferme de Fontenay</div>
+                    <div class="description_picture-adress">58 rue Anatole France, 77610</div>
+                    <div class="description_picture-place">Producteur de fruits et légumes en Seine-et-Marne</div>
+                    <button class="button_background-yellow">Voir plus</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final_section">
+        <div class="container_comand">
+            <div>
+                <img src="/files/img/mascotte.png" alt="mearicon" class="mearicon">
+            </div>
+            <div class="container_comand-btn">
+                <div class="command_month">Souscrivez un abonnement ULIMI</div>
+                <div>composé des produits de votre choix</div>
+                <div class="before_button">N’attendez plus</div>
+                <button class="button_background-purple Commandez">Commandez dès maintenant</button>
+            </div>
+            <div>
+                <img src="/files/img/Pictos-img/Accueil/pattern.svg" alt="pattern" class="pattern">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_div-main">
+            <div class="footer_div">
                 <div>
-                    <img src="/files/cart_fruits.png" alt="mearicon" class="mearicon">
-                    <div>Ulimi vous propose de choisir votre panier de</div>
-                    <div>produits</div>
+                    <div>PRIMEUR</div>
+                    <div>Fruits</div>
+                    <div>Légumes</div>
+                    <div>Aromate</div>
                 </div>
-                <div class="container_comand-btn">
-                    <div class="command_month">Commandez chaque mois votre panier ULIMI</div>
-                    <div>composé des produits de votre choix</div>
-                    <div class="before_button">N’attendez plus</div>
-                    <button class="button_background-purple Commandez">Commandez dès maintenant</button>
+                <div class="footer_div-first">
+                    <div>PRODUITS LAITIERS</div>
+                    <div>Fromage</div>
+                    <div>Lait</div>
+                    <div>Yaourt</div>
+                    <div>Crème</div>
                 </div>
-                    {# <img src="/files/img_home_footer.png" alt="pattern" class="pattern"> #}
+                <div class="footer_div-first">
+                    <div>BOULANGERIE</div>
+                    <div>Pain</div>
+                    <div>Pâte artisanale</div>
+                </div>
+                <div class="footer_div-first">
+                    <div>BOISSONS</div>
+                    <div>Jus</div>
+                    <div>Vins</div>
+                    <div>Bière/cidre</div>
+                    <div>Spiritueux</div>
+                </div>
+                <div class="footer_div-first">
+                    <div>EMBALLAGES</div>
+                </div>
+                <div class="footer_div-first">
+                    <div>REJOIGNEZ-VOUS</div>
+                    <div>
+                        <img src="/files/img/logo_facebook.png" alt="facebook">
+                        <img src="/files/img/logo_instagram.png" alt="instagram">
+                        <img src="/files/img/logo_linkedin.png" alt="linkedin">
+                    </div>
+                </div>
             </div>
-        </section>
-
-    </body>
+        </div>
+    </footer>
+</body>
 </html>

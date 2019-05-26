@@ -143,7 +143,7 @@ $images = $this->productItem->getRefItems( 'media', 'default', 'default' );
 $prodImage = ( ( $image = reset( $images ) ) !== false ? $this->content( $image->getUrl() ) : '' );
 
 ?>
-<div class="catalog-social">
+<div class="catalog-social" style='display:none;'>
 <?php foreach( $list as $entry ) : $default = ( isset( $urls[$entry] ) ? $urls[$entry] : null ); ?>
 	<?php if( ( $link = $this->config( 'client/html/catalog/social/url/' . $entry, $default ) ) !== null ) : ?>
 		<a class="social-button social-button-<?= $enc->attr( $entry ); ?>"
