@@ -55,36 +55,36 @@ $enc = $this->encoder();
 			</label>
 		</div>
 		</div>
-	<div class='sub'>
+	<div class='sub1'>
 		<h3>Saison</h3>
 		<div>
 		<label for="huey">Printemps
-			<input type="radio" id="huey" name="season" value="Printemps" class="radio_border-purple" checked>
-			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			<input type="radio" id="printemps" name="season" value="Printemps" class="radio_border-purple" checked>
+			<span class="radio--white" for="radio_after-purple" for="printemps"></span>
 			</label>
 		</div>
 
 		<div>
 		<label for="dewey">Eté
-			<input type="radio" id="dewey" name="season" value="Eté" class="radio_border-purple">
-			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			<input type="radio" id="ete" name="season" value="Eté" class="radio_border-purple">
+			<span class="radio--white" for="radio_after-purple" for="ete"></span>
 			</label>
 		</div>
 		<div>
 		<label for="louie">Automne
-			<input type="radio" id="louie" name="season" value="Automne" class="radio_border-purple">
-			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			<input type="radio" id="automne" name="season" value="Automne" class="radio_border-purple">
+			<span class="radio--white" for="radio_after-purple" for="automne"></span>
 			</label>
 		</div>
 		<div>
 		<label for="louie">Hiver
-			<input type="radio" id="louie" name="season" value="Hiver" class="radio_border-purple">
-			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
+			<input type="radio" id="hiver" name="season" value="Hiver" class="radio_border-purple">
+			<span class="radio--white" for="radio_after-purple" for="hiver"></span>
 			</label>
 		</div>
 	</div>
 
-	<div class='sub'>
+	<div class='sub2'>
 		<h3>Prix</h3>
 		<div>
 		<label for="huey">0-10€

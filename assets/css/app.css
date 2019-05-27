@@ -336,14 +336,6 @@ header {
     /* background-color: red; */
 }
 
-.rectangle_purple {
-    position: absolute;
-    height: 400px;
-    width: 70%;
-    background: #A88888;
-    margin-top: 4%;
-    margin-left: 10%;
-}
 
 .list {
     width: 18%;
@@ -354,7 +346,9 @@ header {
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
 }
-
+.new_img{
+    margin:auto;
+}
 .pattern2 {
     width: 100%;
     margin-top: 10%;
@@ -391,7 +385,7 @@ header {
     box-shadow: 1px 1px 10px #000000;
     border-radius: 1px;
     overflow: hidden;
-    height: 350px;
+   
     position: relative;
 }
 
@@ -438,13 +432,19 @@ header {
     display: flex;
     flex-direction: row;
 }
-
-.final_section {
-    border-bottom: 1px solid #F9E76E;
-    border-top: 1px solid #F9E76E;
-    margin-top: 10%;
+.rounds_container .roundpurple{
+    background-color: var(--purple);
+    width:110px;
+    height:110px;
+    border-radius:110px;
+    text-align: center;
+    padding-top:25px;
 }
-
+.rounds_container{
+    position:relative;
+    color:white;
+   
+}
 .container_comand {
     display: flex;
     flex-direction: row;
@@ -454,11 +454,20 @@ header {
     background-image:url('/files/img_home_footer.png');
     background-position: left;
 }
-
-.container_comand-btn {
-    margin-top: 10%;
+.rounds_container .first_right{
+    position:absolute;
+    top:20px;
 }
-
+.rounds_container .first_left{
+    position:absolute;
+    right:0;
+    top:20px;
+}
+.rounds_container .bottom_round{
+    position:absolute;
+    bottom:0;
+    right:70px;
+}
 .mearicon {
     height:150px;
     width: 150px;
@@ -742,12 +751,15 @@ input {
 }
 
 .image_home {
-    height: 200px;
+    height: 50vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-image: url("/files/img/Pictos-img/Accueil/image_modifier.PNG");
-    background-size: cover;
+    
+    background: url("/files/back_home_fruits.png");
+    background-position-x: 85%;
+    background-size: auto;
+    background-color:#F4F4F2;
     background-repeat: no-repeat;
 }
 
@@ -766,14 +778,7 @@ input {
     /* background-color: red; */
 }
 
-.rectangle_purple {
-    position: absolute;
-    height: 400px;
-    width: 70%;
-    background: purple;
-    margin-top: 4%;
-    margin-left: 10%;
-}
+
 
 .list {
     width: 18%;
@@ -818,10 +823,9 @@ input {
     width: 300px;
     margin: auto;
     margin-top: 100px;
-    box-shadow: 1px 1px 10px #000000;
+    box-shadow: 10px 10px 36px 19px rgba(133,133,133,0.42);
     border-radius: 1px;
     overflow: hidden;
-    height: 350px;
     position: relative;
 }
 
@@ -841,6 +845,7 @@ input {
 .description_picture {
     margin-left: 5%;
     margin-top: 5%;
+    margin-bottom:5%;
 }
 
 .description_picture-adress {
@@ -871,8 +876,6 @@ input {
 }
 
 .final_section {
-    border-bottom: 1px solid #707070;
-    border-top: 1px solid #707070;
     margin-top: 10%;
 }
 
@@ -881,10 +884,6 @@ input {
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
-}
-
-.container_comand-btn {
-    margin-top: 10%;
 }
 
 .mearicon {
@@ -901,7 +900,7 @@ input {
 }
 
 .Commandez {
-    width: 210px;
+    width: 20vw;
     margin-top: 5%;
 }
 
@@ -1031,7 +1030,10 @@ body{
     }
     #menu-demo2 li {
     background-color: white;
-    padding-top:2vh;
+    padding:1vh 0;
+    }
+    #menu-demo2 li li:last-child{
+        padding-bottom:10px;
     }
     /* background des liens sous menus */
     #menu-demo2 li li{
@@ -1054,7 +1056,7 @@ body{
     display:block;
     padding:8px 32px;
     color:#fff;
-    font-family:arial;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     }
     #menu-demo2 ul a{
     padding:8px 0;
@@ -1210,7 +1212,9 @@ body .buttons_product .add_panier{
         border:1px solid lightgrey;
     }
 
-   .left_menu [type="radio"] {
+   .left_menu .sub [type="radio"],
+   .left_menu .sub1 [type="radio"],
+   .left_menu .sub2 [type="radio"] {
     border: 0; 
     clip: rect(0 0 0 0); 
     height: 1px; margin: -1px; 
@@ -1221,7 +1225,9 @@ body .buttons_product .add_panier{
   }
   
   /* One radio button per line */
-  .left_menu label {
+  .left_menu .sub label,
+  .left_menu .sub1 label,
+  .left_menu .sub2 label {
     display:flex;
     padding-left:10px;
     justify-content: space-between;
@@ -1231,13 +1237,17 @@ body .buttons_product .add_panier{
     font-size: 1em;
   }
   
-  .left_menu [type="radio"] + span {
+  .left_menu .sub [type="radio"] + span,
+  .left_menu .sub1 [type="radio"] + span,
+  .left_menu .sub2 [type="radio"] + span {
     /* display: block; */
     justify-self: flex-end;
   }
   
   /* the basic, unchecked style */
-  .left_menu [type="radio"] + span:before {
+  .left_menu .sub [type="radio"] + span:before,
+  .left_menu .sub1 [type="radio"] + span:before ,
+  .left_menu .sub2 [type="radio"] + span:before  {
     content: '';
     display: inline-block;
     width: 1em;
@@ -1249,15 +1259,24 @@ body .buttons_product .add_panier{
     margin-right: 0.75em;
     transition: 0.5s ease all;
   }
-  
+  .left_menu .sub1 div label,
+  .left_menu .sub2 div label{
+    line-height: 2.5;
+    font-size: 1em;
+    font-weight: normal;
+  }
   /* the checked style using the :checked pseudo class */
-  .left_menu [type="radio"]:checked + span:before {
+  .left_menu .sub [type="radio"]:checked + span:before,
+  .left_menu .sub1 [type="radio"]:checked + span:before,
+  .left_menu .sub2 [type="radio"]:checked + span:before {
     background: var(--purple);
-    box-shadow: 0 0 0 0.25em #000;
+    box-shadow: 0 0 0 0.15em #000;
   }
   
   /* never forget focus styling */
-  .left_menu [type="radio"]:focus + span:after {
+  .left_menu .sub [type="radio"]:focus + span:after,
+  .left_menu .sub1 [type="radio"]:focus + span:after ,
+  .left_menu .sub2 [type="radio"]:focus + span:after  {
     /* content: '\0020\2190'; */
     font-size: 1.5em;
     line-height: 1;
