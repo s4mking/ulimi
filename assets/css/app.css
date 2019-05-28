@@ -332,10 +332,15 @@ header {
 
 .section {
     margin-top: 10%;
-    height: 500px;
+   
     /* background-color: red; */
 }
-
+.abric_ulib{
+    padding-bottom:15vh;
+    background-image: url('/files/banner_filigrane.png');
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
 
 .list {
     width: 18%;
@@ -380,7 +385,7 @@ header {
 
 .container_slide-second {
     width: 300px;
-    margin: auto;
+    
     margin-top: 100px;
     box-shadow: 1px 1px 10px #000000;
     border-radius: 1px;
@@ -438,12 +443,18 @@ header {
     height:110px;
     border-radius:110px;
     text-align: center;
-    padding-top:25px;
+    padding-top:35px;
 }
 .rounds_container{
     position:relative;
     color:white;
    
+}
+.abric_ulib{
+    display:flex;
+}
+.ulib_masc .masc{
+    overflow:hidden;
 }
 .container_comand {
     display: flex;
@@ -771,12 +782,23 @@ input {
 .image_home-produits {
     margin-top: 1%;
 }
-
+#modal,#shade{
+    display:none;
+}
 .section {
-    margin-top: 10%;
-    height: 500px;
+    margin-top: 6%;
+  
     /* background-color: red; */
 }
+
+.basket-mini-product .basket{
+    margin-top:14px;
+    background-color:lightgrey;
+}
+
+
+
+
 
 
 
@@ -821,14 +843,17 @@ input {
 
 .container_slide-second {
     width: 300px;
-    margin: auto;
+   
     margin-top: 100px;
     box-shadow: 10px 10px 36px 19px rgba(133,133,133,0.42);
     border-radius: 1px;
     overflow: hidden;
     position: relative;
 }
-
+.container_slide{
+    display:flex;
+    justify-content: space-around;
+}
 .container_silde-third {
     position: relative;
     width: 100%;
@@ -989,7 +1014,7 @@ body{
         align-items: center;
     }
     .submenu{
-        border-bottom:1px solid #707070;
+        border-bottom:1px solid lightgray;
     }
     #menu-demo2 li{
     display:inline-block;
@@ -998,6 +1023,7 @@ body{
 
     #menu-demo2 li a {
     color: #323231 !important;
+    font-size:1.7em;
     }
 
     #menu-demo2 li:hover a {
@@ -1163,6 +1189,10 @@ body .aimeos .addbasket .btn {
 }
 body .buttons_product .add_panier{
     margin-top:2vh;
+}
+.image_home-text div{
+    font-size:1.7em;
+    color:black;
 }
 .aimeos .catalog-detail-basket .input-group .btn{
     width:auto;

@@ -9,7 +9,7 @@
 require('../css/app.css');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-// const $ = require('jquery');
+ const $ = require('jquery');
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
@@ -24,4 +24,13 @@ document.querySelector('#decrease').addEventListener('click',function(){
     value = isNaN(value) ? 0 : value;
     value--;
     document.getElementById('number').value = value;
+})
+
+document.querySelector('#file').addEventListener('click',function(){
+    sweetAlert({ title: 'Ma fiche bienfait',
+    imageUrl: '/files/bienfaitconcombre.png',
+    // imageWidth: 400,
+    // imageHeight: 200,
+    imageAlt: 'Custom image',
+    animation: false});
 })

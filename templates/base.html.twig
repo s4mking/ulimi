@@ -8,10 +8,12 @@
 {% block aimeos_header %}{% endblock %}
         <title>{% block title %}Ulimi{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 {% block aimeos_styles %}{% endblock %}
   {% block stylesheets %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.1.0/sweetalert2.min.css" />
             {# 'app' must match the first argument to addEntry() in webpack.config.js #}
             {{ encore_entry_link_tags('app') }}
 
@@ -131,6 +133,7 @@
         
 {% block aimeos_scripts %}{% endblock %}
 {% block javascripts %}
+<script src="https://cdn.jsdelivr.net/sweetalert2/6.1.0/sweetalert2.min.js"></script>
             {{ encore_entry_script_tags('app') }}
 
             <!-- Renders app.js & a webpack runtime.js file
