@@ -50,8 +50,8 @@
             <ul id="menu-demo2" class="flex">
                 <li class="accessibility">Site accessible <i class="fas fa-chevron-down"></i>
                     <ul>
-                        <li><a href="#">Ce site est accessible pour</a></li>
-                        <li><a href="#">les personnes présentant :</a></li>
+                        <li>Ce site est accessible pour</li>
+                        <li>les personnes présentant :</li>
                         <li><img src="/files/img/brain.png" alt="Cerveau"><a href="#">Déficiences intellectuelles</a></li>
                         <li><img src="/files/img/hearing.png" alt="Oreille"><a href="#">Sourdité</a></li>
                         <li><img src="/files/img/private.png" alt="Privé"><a href="#">Malvoyants</a></li>
@@ -133,14 +133,35 @@
         
 {% block aimeos_scripts %}{% endblock %}
 {% block javascripts %}
-<script src="https://cdn.jsdelivr.net/sweetalert2/6.1.0/sweetalert2.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/sweetalert2/6.1.0/sweetalert2.min.js"></script>
             {{ encore_entry_script_tags('app') }}
 
             <!-- Renders app.js & a webpack runtime.js file
                 <script src="/build/runtime.js"></script>
                 <script src="/build/app.js"></script> -->
         {% endblock %}
-        
+        {# <script type="text/javascript">
+var _userway_config = { #}
+{#/* uncomment the following line to override default position*/
+/* position: '1', */
+/* uncomment the following line to override default size (values: small, large)*/
+ size: 'large', 
+/* uncomment the following line to override default language (e.g., fr, de, es, he, nl, etc.)*/
+ language: 'fr', 
+/* uncomment the following line to override color set via widget (e.g., #053f67)*/
+color: '#743550', 
+/* uncomment the following line to override type set via widget(1=person, 2=chair, 3=eye)*/
+/* type: '1', */
+/* uncomment the following line to override support on mobile devices*/
+/* mobile: true, */
+account: '96GCITYz5G'
+}; #}
+{# </script>
+<script type="text/javascript" src="https://cdn.userway.org/widget.js"></script> #}
+
+
+
+
     </body>
      <footer>
         <div class="footer_div-main">

@@ -36,20 +36,20 @@ $enc = $this->encoder();
 	<div class='sub'>
 		<h3>Sous-catégorie</h3>
 		<div>
-		<label for="huey">Yaourts
+		<label for="huey">Légumes
 			<input type="radio" id="huey" name="drone" value="huey" class="radio_border-purple"	checked>
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
 			</label>
 		</div>
 
 		<div>
-		<label for="dewey">Crèmes
+		<label for="dewey">Fruits
 			<input type="radio" id="dewey" name="drone" value="dewey" class="radio_border-purple">
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
 			</label>
 		</div>
 		<div>
-		<label for="louie">Laitages
+		<label for="louie">Aromates
 			<input type="radio" id="louie" name="drone" value="louie" class="radio_border-purple">
 			<span class="radio--white" for="radio_after-purple" for="radio_border-purple"></span>
 			</label>

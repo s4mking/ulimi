@@ -803,7 +803,10 @@ input {
 
 
 
-
+.form_fos form{
+    display:flex;
+    flex-direction: column;
+}
 
 .list {
     width: 18%;
@@ -1107,8 +1110,26 @@ header #menu-demo2 li {
     background-color: #F9E76E;
     width: 200px;
 }
-
+.container #menu-demo2 li{
+    width: 15vw;
+}
+.container #menu-demo2{
+    padding-left:200px;
+  
+}
+.accessibility ul{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container #menu-demo2 li a{
+  
+}
+.form_fos #fos_user_registration_form input{
+    width:70%;
+}
 header #menu-demo2:hover li {
+    padding-left:20px;
     background-color: #733450;
 }
 
@@ -1206,11 +1227,17 @@ body .buttons_product .add_panier{
     font: 400 15px system-ui;
     padding:10px 25px;
     }
-
+    .form_fos #_submit{
+        background-color: var(--yellow-clear);
+        border-radius: 5px;
+        border-bottom: 0px;
+    }
     .aimeos .catalog-detail-basket .input-group .input-lg{
         padding:0;
     }
-
+.main-content .main-navbar.navbar-brand{
+    color:var(--purple);
+}
     .catalog-detail-basket .service-intro{
         color:black;
     }
@@ -1227,10 +1254,12 @@ body .buttons_product .add_panier{
     .account-subscription .header, .account-history .header, .account-watch .header, .account-favorite .header, .basket-related-bought .header, .catalog-session .header, .catalog-detail .header{
         border-bottom:1px solid var(--purple);
     }
-
+    
     .form_fos input{
         background-color: transparent;
-        margin:auto;
+        margin:10px 0; 
+        margin-bottom:20px;
+
     }
     .form_fos div div{
         display:flex;
@@ -1318,4 +1347,79 @@ body .buttons_product .add_panier{
     line-height: 1;
     vertical-align: -0.125em;
   }
-  
+  body .aimeos .btn-close{
+      color:red !important;
+      font-size:40pt; 
+
+  }
+ .account-subscription-list .subscription-item .account-subscription-detail .header{
+      margin-top:40px;
+  }
+  .account-subscription-list .subscription-cancel .delete:after{
+      font-size:30pt;
+      color:red;
+  }
+
+  @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    
+    .container #menu-demo2{
+        padding-left:0;
+    }
+    header #menu-demo2{
+        display:none;
+    }
+    .container{
+        padding:0;
+    }
+    .abric_ulib{
+        display:none;
+    }
+    .container_slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container_comand{
+        flex-direction: column;
+    }
+    .footer_div{
+        flex-direction:column;
+    }
+    .submenu{
+        flex-direction:column;
+    }
+    #menu-demo2 li:hover, #menu-demo2 a:hover{
+        width:100vw;
+    }
+    .left_menu{
+        display:none;
+    }
+    .product .image{
+        display:none;
+    }
+    .aimeos .basket .product .price{
+        padding:0;
+    }
+    .aimeos .common-summary-detail th, .aimeos .common-summary-detail td{
+        padding:0;
+    }
+    body .unitprice{
+        display:none;
+    }
+    .details{
+        display:none !important;
+    }
+    .container .catalog-filter-search .input-group .form-control{
+        width:25vw;
+    }
+    body .basket-mini-product .basket .action{
+        display:none;
+    }
+    body .basket-mini-product .basket{
+        width: 22em !important;
+    }
+    
+}
